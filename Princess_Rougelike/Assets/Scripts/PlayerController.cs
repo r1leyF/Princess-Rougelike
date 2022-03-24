@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     float horizontalInput;
     float verticalInput;
     public float speed;
+    public Player player;
     
     // Start is called before the first frame update
     void Start()
@@ -26,5 +27,10 @@ public class PlayerController : MonoBehaviour
     {
         transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
         transform.Translate(Vector3.forward * verticalInput * Time.deltaTime * speed);
+        if (Input.GetMouseButtonDown(0) && player.currWeapon != null)
+        {
+            player.Attack();
+        }
     }
+    
 }

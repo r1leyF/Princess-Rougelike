@@ -24,7 +24,7 @@ public class Chest : MonoBehaviour
         if (!isOpen && other.CompareTag("Player"))
         {
             Player player = other.gameObject.GetComponent<Player>();
-            player.SetWeapon(item);
+            player.SetWeapon(item, this);
             isOpen = true;
         }
     }
