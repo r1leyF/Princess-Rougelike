@@ -14,7 +14,6 @@ public class Player : MonoBehaviour
     void Start()
     {
         currHealth = maxHealth;
-        
     }
 
     // Update is called once per frame
@@ -52,12 +51,12 @@ public class Player : MonoBehaviour
         foreach(Collider enemy in hitEnemies)
         {
             //damage enemy && do knock back
-            //enemy.damage(wpnInfo.damage)
+            //exp - enemy.damage(wpnInfo.damage)
             Debug.Log("we hit" + enemy.name);
         }
     }
 
-    //draws a circle around the attack range
+    //draws a sphere around the attack range for easy editing
     private void OnDrawGizmosSelected()
     {
         if (attackPoint == null || currWeapon == null)

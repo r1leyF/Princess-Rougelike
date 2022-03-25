@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+    //Weapon stats changed in editor
     public int damage;
     public int range;
     public float atkSpeed;
