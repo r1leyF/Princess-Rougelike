@@ -96,6 +96,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   range: 2
-  atkSpeed: 5
+  atkRate: 4
   knockback: 0
-  thisPrefab: {fileID: 6061652886285288377}
+  weaponIndex: 1

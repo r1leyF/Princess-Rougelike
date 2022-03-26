@@ -2,14 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Weapon : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
-    //Weapon stats changed in editor
-    public int damage;
-    public int range;
-    public float atkRate;
-    public float knockback;
-    public int weaponIndex;
+    public GameObject[] allWeapons;
+    public GameObject[] allItems;
     // Start is called before the first frame update
     void Start()
     {

@@ -21,14 +21,24 @@ public class Player : MonoBehaviour
     {
         
     }
+    //set the weapon of a player when interacting with a chest
     public void SetWeapon(GameObject weapon, Chest chest)
     {
         //checks if the player already has a weapon
         if(currWeapon != null)
         {
             wpnInfo = currWeapon.GetComponent<Weapon>();
-            //should change to put weapon back in chest
+            
+            //changes the chests item to whatever the player was holding
+            chest.itemIndex = wpnInfo.weaponIndex;
+
+            //destroys the players old weapon
             Destroy(currWeapon);
+        }
+        //if the player didn't have a weapon make the chest empty
+        else
+        {
+            chest.itemIndex = -1;
         }
 
         //instantiates weapon prefab and assighs it to currWeapon
@@ -36,7 +46,6 @@ public class Player : MonoBehaviour
 
 
     }
-
     //expects player to have a weapon
     public void Attack()
     {
@@ -52,7 +61,7 @@ public class Player : MonoBehaviour
         {
             //damage enemy && do knock back
             //exp - enemy.damage(wpnInfo.damage)
-            Debug.Log("we hit" + enemy.name);
+            Debug.Log("we hit " + enemy.name);
         }
     }
 
