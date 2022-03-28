@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     public Transform attackPoint;
     public LayerMask enemyLayers;
     Weapon wpnInfo;
+
+    public string hitenemy;
     // Start is called before the first frame update
     void Start()
     {
@@ -62,6 +64,7 @@ public class Player : MonoBehaviour
             //damage enemy && do knock back
             //exp - enemy.damage(wpnInfo.damage)
             Debug.Log("we hit " + enemy.name);
+            hitenemy = enemy.name;
         }
     }
 

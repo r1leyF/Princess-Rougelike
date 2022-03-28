@@ -21,14 +21,7 @@ public class PlayerController : MonoBehaviour
     {
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
-        
-
-    }
-    private void FixedUpdate()
-    {
-        transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
-        transform.Translate(Vector3.forward * verticalInput * Time.deltaTime * speed);
-        if(Time.time <= nextAttackTime)
+        if (Time.time >= nextAttackTime)
         {
             if (Input.GetMouseButtonDown(0) && player.currWeapon != null)
             {
@@ -37,6 +30,13 @@ public class PlayerController : MonoBehaviour
                 nextAttackTime = Time.time + 1 / player.currWeapon.GetComponent<Weapon>().atkRate;
             }
         }
+        
+
+    }
+    private void FixedUpdate()
+    {
+        transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
+        transform.Translate(Vector3.forward * verticalInput * Time.deltaTime * speed);
     }
     
 }
