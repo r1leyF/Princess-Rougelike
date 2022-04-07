@@ -10,11 +10,13 @@ public class Player : MonoBehaviour
     public Transform attackPoint;
     public LayerMask enemyLayers;
     Weapon wpnInfo;
+    GameManager gameManager;
 
     public string hitenemy;
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         currHealth = maxHealth;
     }
 
@@ -44,7 +46,7 @@ public class Player : MonoBehaviour
         }
 
         //instantiates weapon prefab and assighs it to currWeapon
-        currWeapon = Instantiate(weapon, transform.GetChild(0).GetChild(1).transform.position, transform.GetChild(0).rotation, transform.GetChild(0));
+        currWeapon = Instantiate(weapon, transform.GetChild(0).GetChild(0).transform.position, transform.GetChild(0).rotation, transform.GetChild(0));
 
 
     }
@@ -65,6 +67,15 @@ public class Player : MonoBehaviour
             //exp - enemy.damage(wpnInfo.damage)
             Debug.Log("we hit " + enemy.name);
             hitenemy = enemy.name;
+        }
+    }
+
+    public void damage(int dmg)
+    {
+        currHealth -= dmg;
+        if(currHealth <= 0)
+        {
+            gameManager.gameOver();
         }
     }
 
