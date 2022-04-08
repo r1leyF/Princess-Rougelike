@@ -11,11 +11,13 @@ public class Player : MonoBehaviour
     public LayerMask enemyLayers;
     Weapon wpnInfo;
     GameManager gameManager;
+    Goblin goblin;
 
     public string hitenemy;
     // Start is called before the first frame update
     void Start()
     {
+        goblin = GameObject.Find("goblin").GetComponent<Goblin>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         currHealth = maxHealth;
     }
@@ -23,7 +25,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     //set the weapon of a player when interacting with a chest
     public void SetWeapon(GameObject weapon, Chest chest)
@@ -67,6 +69,7 @@ public class Player : MonoBehaviour
             //exp - enemy.damage(wpnInfo.damage)
             Debug.Log("we hit " + enemy.name);
             hitenemy = enemy.name;
+            goblin.TakeDamage();
         }
     }
 
