@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
         gameOverScreen.SetActive(false);
         FollowMouse.canFollow = true;
         PlayerController.canMove = true;
+
     }
 
     // Update is called once per frame

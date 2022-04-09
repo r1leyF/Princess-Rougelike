@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class HeartContainer : MonoBehaviour
 {
-    /*public HeartContainer next;
+    public HeartContainer next;
     [Range(0, 1)] float fill;
     [SerializeField] Image fillImage;
     // Start is called before the first frame update
@@ -19,5 +19,5 @@ public class HeartContainer : MonoBehaviour
         {
             next.SetHeart(count);
         }
-    }*/
+    }
 }

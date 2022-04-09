@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
         goblin = GameObject.Find("goblin").GetComponent<Goblin>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         currHealth = maxHealth;
+        HealthBar.instance.SetupHearts(currHealth);
     }
 
     // Update is called once per frame
@@ -69,13 +70,14 @@ public class Player : MonoBehaviour
             //exp - enemy.damage(wpnInfo.damage)
             Debug.Log("we hit " + enemy.name);
             hitenemy = enemy.name;
-            goblin.TakeDamage();
+            goblin.TakeDamage(wpnInfo.damage);
         }
     }
 
     public void damage(int dmg)
     {
         currHealth -= dmg;
+        HealthBar.instance.RemoveHearts(dmg);
         if(currHealth <= 0)
         {
             gameManager.gameOver();

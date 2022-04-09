@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class HealthBar : MonoBehaviour
 {
-    //currently unworking https://www.youtube.com/watch?v=yeFTUBm0PbM 7:33
-    /*public static HealthBar instance;
+    public static HealthBar instance;
     [SerializeField] GameObject heartContainerPrefab;
     [SerializeField] List<GameObject> heartContainers;
 
     int totalHearts;
     float currHearts;
     HeartContainer currContainer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,19 +27,68 @@ public class HealthBar : MonoBehaviour
         {
             Destroy(transform.GetChild(i).gameObject);
         }
+
         totalHearts = heartsIn;
         currHearts = (float)totalHearts;
+
         for(int i = 0; i < totalHearts; i++)
         {
-            GameObject current = Instantiate(heartContainerPrefab, transform);
-            heartContainers.Add(current);
+            GameObject newHeart = Instantiate(heartContainerPrefab, transform);
+            heartContainers.Add(newHeart);
 
             if(currContainer != null)
             {
-                currContainer.next = current.GetComponent<HeartContainer>();
+                currContainer.next = newHeart.GetComponent<HeartContainer>();
             }
-            currContainer = current.GetComponent<HeartContainer>();
+            currContainer = newHeart.GetComponent<HeartContainer>();
         }
         currContainer = heartContainers[0].GetComponent<HeartContainer>();
-    }*/
+    }
+
+    //manually set health to a specific value
+    public void SetCurrentHealth(float health)
+    {
+        currHearts = health;
+        currContainer.SetHeart(currHearts);
+    }
+
+    //add a specified amount of health
+    public void AddHearts(float healthUp)
+    {
+        currHearts += healthUp;
+        if(currHearts > totalHearts)
+        {
+            currHearts = (float)totalHearts;
+        }
+        currContainer.SetHeart(currHearts);
+    }
+
+    //remove a specified amount of health
+    public void RemoveHearts(float healthDown)
+    {
+        currHearts -= healthDown;
+        if(currHearts < 0)
+        {
+            currHearts = 0f;
+        }
+        currContainer.SetHeart(currHearts);
+    }
+
+    //add a heart and set player to full health
+    public void AddContainer()
+    {
+        GameObject newHeart = Instantiate(heartContainerPrefab, transform);
+        currContainer = heartContainers[heartContainers.Count - 1].GetComponent<HeartContainer>();
+        heartContainers.Add(newHeart);
+
+        if(currContainer != null)
+        {
+            currContainer.next = newHeart.GetComponent<HeartContainer>();
+        }
+        currContainer = heartContainers[0].GetComponent<HeartContainer>();
+
+        totalHearts++;
+        currHearts = totalHearts;
+        SetCurrentHealth(currHearts);
+    }
 }

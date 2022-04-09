@@ -69,9 +69,9 @@ public class Goblin : MonoBehaviour
     }
 
     // enemy takes damage
-    public void TakeDamage()
+    public void TakeDamage(float dmg)
     {
-        heatlh = heatlh - 1;
+        heatlh = heatlh - dmg;
         Debug.Log(heatlh);
         if(heatlh <= 0)
         {
