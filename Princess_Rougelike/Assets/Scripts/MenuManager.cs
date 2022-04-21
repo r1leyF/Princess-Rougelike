@@ -19,6 +19,7 @@ public class MenuManager : MonoBehaviour
 
     public GameObject aboutScreen;
     public GameObject titleScreen;
+    public GameObject controlsScreen;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +32,7 @@ public class MenuManager : MonoBehaviour
         startPos = largeRect.anchoredPosition;
 
         aboutScreen.SetActive(false);
+        controlsScreen.SetActive(false);
         titleScreen.SetActive(true);
     }
 
@@ -58,9 +60,15 @@ public class MenuManager : MonoBehaviour
         aboutScreen.SetActive(true);
         titleScreen.SetActive(false);
     }
+    public void ShowControls()
+    {
+        controlsScreen.SetActive(true);
+        titleScreen.SetActive(false);
+    }
     public void Back()
     {
         aboutScreen.SetActive(false);
+        controlsScreen.SetActive(false);
         titleScreen.SetActive(true);
     }
 
