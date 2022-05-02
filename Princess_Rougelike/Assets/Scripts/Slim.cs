@@ -45,6 +45,7 @@ public class Slim : MonoBehaviour
     }
 
     // enemy takes damage
+    /*
     public void TakeDamage(float dmg)
     {
         heatlh = heatlh - dmg;
@@ -54,7 +55,7 @@ public class Slim : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
+    */
     //enemy hits player
     void OnCollisionEnter(Collision otherObj)
     {

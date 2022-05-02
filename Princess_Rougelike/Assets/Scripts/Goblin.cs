@@ -69,6 +69,7 @@ public class Goblin : MonoBehaviour
     }
 
     // enemy takes damage
+    /*
     public void TakeDamage(float dmg)
     {
         heatlh = heatlh - dmg;
@@ -78,7 +79,7 @@ public class Goblin : MonoBehaviour
             Destroy(gameObject);
         }
     }    
-
+    */
     //enemy hits player
     void OnCollisionEnter(Collision otherObj)
     {

@@ -2,20 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Skeleton : MonoBehaviour
+public class Monster : MonoBehaviour
 {
     //floats
-    private float speed = 2;
-    private float heatlh = 3;
-    private float coolDown = 1;
+    //private float speed = 2;
+    public float heatlh = 3;
 
     //vector3
-    private Vector3 playerPosition;
+    //private Vector3 playerPosition;
 
     //gameobject
     public GameObject player;
-    public GameObject bone;
-
+    
     //scpits
     Player playerScipt;
 
@@ -30,15 +28,10 @@ public class Skeleton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Movment();
-        coolDown -= Time.deltaTime;
-        if (coolDown < 0)
-        {
-            Instantiate(bone);
-            coolDown = 1;
-        }
+        
     }
-
+    
+    /*
     //moves and rotates the player
     void Movment()
     {
@@ -46,29 +39,31 @@ public class Skeleton : MonoBehaviour
         playerPosition = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
         transform.LookAt(playerPosition);
 
-        //moves slime
+        //moves bullets
         transform.Translate(Vector3.forward * Time.deltaTime * speed);
     }
+    */
 
     // enemy takes damage
-    /*
     public void TakeDamage(float dmg)
     {
         heatlh = heatlh - dmg;
         Debug.Log(heatlh);
-        if (heatlh <= 0)
+        if(heatlh <= 0)
         {
             Destroy(gameObject);
         }
-    }
-    */
+    }    
+
     //enemy hits player
+    /*
     void OnCollisionEnter(Collision otherObj)
     {
-        if (otherObj.gameObject.tag == "Player")
+        if(otherObj.gameObject.tag == "Player")
         {
             playerScipt.damage(1);
 
         }
     }
+    */
 }
