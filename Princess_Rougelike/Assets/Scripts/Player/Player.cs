@@ -70,7 +70,7 @@ public class Player : MonoBehaviour
             //exp - enemy.damage(wpnInfo.damage)
             Debug.Log("we hit " + enemy.name);
             hitenemy = enemy.name;
-            goblin.TakeDamage(wpnInfo.damage);
+            //goblin.TakeDamage(wpnInfo.damage);
         }
     }
 

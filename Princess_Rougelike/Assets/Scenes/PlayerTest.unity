@@ -316,9 +316,10 @@ GameObject:
   - component: {fileID: 292390576}
   - component: {fileID: 292390575}
   - component: {fileID: 292390574}
+  - component: {fileID: 292390578}
   - component: {fileID: 292390573}
   m_Layer: 3
-  m_Name: goblin
+  m_Name: Goblin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -413,6 +414,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &292390578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292390572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1102b7a0e78a22c42acf5b8029826791, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heatlh: 3
 --- !u!1 &403526325
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,9 +439,10 @@ GameObject:
   - component: {fileID: 403526329}
   - component: {fileID: 403526328}
   - component: {fileID: 403526327}
+  - component: {fileID: 403526331}
   - component: {fileID: 403526326}
   m_Layer: 3
-  m_Name: skeleton
+  m_Name: Skeleton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -523,6 +538,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &403526331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403526325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1102b7a0e78a22c42acf5b8029826791, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heatlh: 3
 --- !u!1 &436903913
 GameObject:
   m_ObjectHideFlags: 0
@@ -2071,9 +2099,10 @@ GameObject:
   - component: {fileID: 1617961079}
   - component: {fileID: 1617961078}
   - component: {fileID: 1617961077}
+  - component: {fileID: 1617961081}
   - component: {fileID: 1617961076}
   m_Layer: 3
-  m_Name: slime
+  m_Name: Slime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2169,6 +2198,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1617961081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1617961075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1102b7a0e78a22c42acf5b8029826791, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heatlh: 3
 --- !u!1 &1627013021
 GameObject:
   m_ObjectHideFlags: 0
