@@ -10,23 +10,31 @@ public class Goblin : MonoBehaviour
     private float coolDown = 3;
     private float heatlh = 3;
 
+    private int damgae = 1;
+
+    /*
     //vector3
     private Vector3 playerPosition;
 
     //gameobject
     public GameObject player;
-    
-    //scpits
-   Player playerScipt;
+    */
 
+    //scpits
+    Enemy enemyScript;
+    
     // Start is called before the first frame update
     void Start()
     {
         //finds player
-        player = GameObject.Find("Player");
-        playerScipt = GameObject.Find("Player").GetComponent<Player>();
-    }
+        enemyScript = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemy>();
 
+        enemyScript.speed = speed;
+        enemyScript.heatlh = heatlh;
+        enemyScript.damage = damgae;
+
+    }
+    /*
     // Update is called once per frame
     void Update()
     {
@@ -79,7 +87,7 @@ public class Goblin : MonoBehaviour
             Destroy(gameObject);
         }
     }    
-    */
+    
     //enemy hits player
     void OnCollisionEnter(Collision otherObj)
     {
@@ -89,4 +97,5 @@ public class Goblin : MonoBehaviour
 
         }
     }
+    */
 }
