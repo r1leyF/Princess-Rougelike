@@ -6,19 +6,19 @@ public class Goblin : MonoBehaviour
 {
     //floats
     private float speed = 2;
-    private float jump = 10;
-    private float coolDown = 3;
+    //private float jump = 10;
+    //private float coolDown = 3;
     private float heatlh = 3;
 
     private int damgae = 1;
 
-    /*
+    
     //vector3
-    private Vector3 playerPosition;
+    //private Vector3 playerPosition;
 
     //gameobject
-    public GameObject player;
-    */
+    //public GameObject player;
+    
 
     //scpits
     Enemy enemyScript;
@@ -34,8 +34,9 @@ public class Goblin : MonoBehaviour
         enemyScript.damage = damgae;
 
     }
-    /*
+
     // Update is called once per frame
+    /*
     void Update()
     {
         coolDown -= Time.deltaTime;
@@ -77,7 +78,7 @@ public class Goblin : MonoBehaviour
     }
 
     // enemy takes damage
-    /*
+    
     public void TakeDamage(float dmg)
     {
         heatlh = heatlh - dmg;

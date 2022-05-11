@@ -9,6 +9,9 @@ public class Skeleton : MonoBehaviour
     private float heatlh = 3;
     private float coolDown = 1;
 
+    private int damgae = 1;
+
+
     //vector3
     private Vector3 playerPosition;
 
@@ -17,20 +20,28 @@ public class Skeleton : MonoBehaviour
     public GameObject bone;
 
     //scpits
-    Player playerScipt;
+    Enemy enemyScript;
+    //Player playerScipt;
 
     // Start is called before the first frame update
     void Start()
     {
         //finds player
-        player = GameObject.Find("Player");
-        playerScipt = GameObject.Find("Player").GetComponent<Player>();
+        //player = GameObject.Find("Player");
+        //playerScipt = GameObject.Find("Player").GetComponent<Player>();
+
+        //finds player
+        enemyScript = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemy>();
+
+        enemyScript.speed = speed;
+        enemyScript.heatlh = heatlh;
+        enemyScript.damage = damgae;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Movment();
+        //Movment();
         coolDown -= Time.deltaTime;
         if (coolDown < 0)
         {
@@ -38,7 +49,7 @@ public class Skeleton : MonoBehaviour
             coolDown = 1;
         }
     }
-
+    /*
     //moves and rotates the player
     void Movment()
     {
@@ -51,7 +62,6 @@ public class Skeleton : MonoBehaviour
     }
 
     // enemy takes damage
-    /*
     public void TakeDamage(float dmg)
     {
         heatlh = heatlh - dmg;
@@ -61,7 +71,6 @@ public class Skeleton : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    */
     //enemy hits player
     void OnCollisionEnter(Collision otherObj)
     {
@@ -71,4 +80,5 @@ public class Skeleton : MonoBehaviour
 
         }
     }
+    */
 }

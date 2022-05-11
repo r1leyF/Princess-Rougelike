@@ -20,7 +20,7 @@ public class FloorSlime : MonoBehaviour
         playerScipt = GameObject.Find("Player").GetComponent<Player>();
 
         //finds slime
-        slime = GameObject.Find("slime");
+        slime = GameObject.Find("Slime");
 
         transform.position = new Vector3 (slime.transform.position.x, slime.transform.position.y, slime.transform.position.z);
 

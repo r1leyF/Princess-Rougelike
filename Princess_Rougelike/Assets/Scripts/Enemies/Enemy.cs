@@ -21,6 +21,8 @@ public class Enemy : MonoBehaviour
     private Vector3 playerPosition;
 
 
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +36,7 @@ public class Enemy : MonoBehaviour
     {
         Movment();
     }
+
 
     //enemy hits player
     void OnCollisionEnter(Collision otherObj)
