@@ -20,9 +20,6 @@ public class Enemy : MonoBehaviour
     //vecotr 3
     private Vector3 playerPosition;
 
-
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -44,7 +41,6 @@ public class Enemy : MonoBehaviour
         if (otherObj.gameObject.tag == "Player")
         {
             playerScipt.damage(damage);
-
         }
     }
 

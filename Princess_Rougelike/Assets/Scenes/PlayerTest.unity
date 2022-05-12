@@ -319,7 +319,7 @@ MonoBehaviour:
   attackPoint: {fileID: 1066602990}
   enemyLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   hitenemy: 
 --- !u!4 &187312184
 Transform:
@@ -505,7 +505,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 292390572}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.06, y: 0.67, z: 4.21}
+  m_LocalPosition: {x: -0.82, y: 0.67, z: 4.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -523,7 +523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1102b7a0e78a22c42acf5b8029826791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heatlh: 3
+  heatlh: 10
   speed: 1
   damage: 1
   player: {fileID: 187312179}
@@ -632,7 +632,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 403526325}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.06, y: 0.67, z: 7.39}
+  m_LocalPosition: {x: -7.36, y: 0.67, z: 7.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -650,10 +650,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1102b7a0e78a22c42acf5b8029826791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heatlh: 3
+  heatlh: 5
   speed: 1
   damage: 1
-  player: {fileID: 0}
+  player: {fileID: 187312179}
 --- !u!1 &436903913
 GameObject:
   m_ObjectHideFlags: 0
@@ -1687,7 +1687,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1066602989}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.312}
+  m_LocalPosition: {x: 0, y: 0, z: 1.37}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 977708804}
@@ -2146,7 +2146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1102b7a0e78a22c42acf5b8029826791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heatlh: 3
+  heatlh: 15
   speed: 1
   damage: 1
   player: {fileID: 187312179}

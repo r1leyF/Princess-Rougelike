@@ -25,13 +25,11 @@ public class Bone : MonoBehaviour
         playerScipt = GameObject.Find("Player").GetComponent<Player>();
 
         //finds slime
-        skeleton = GameObject.Find("skeleton");
+        skeleton = GameObject.Find("Skeleton");
 
         playerPosition = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
-        transform.LookAt(playerPosition);
         transform.position = new Vector3(skeleton.transform.position.x, skeleton.transform.position.y, skeleton.transform.position.z);
-        
-
+        transform.LookAt(playerPosition);        
     }
 
     // Update is called once per frame

@@ -30,7 +30,6 @@ public class FloorSlime : MonoBehaviour
     void Update()
     {
         heatlh -= Time.deltaTime;
-        Debug.Log(heatlh);
         if (heatlh < 0)
         {
             Destroy(gameObject);
