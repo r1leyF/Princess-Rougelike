@@ -7,9 +7,11 @@ public class Slim : MonoBehaviour
     //floats
     private float speed = 2;
     private float heatlh = 3;
+    private float coolDOwn = 3;
 
     private int damgae = 1;
 
+    private bool idk = false;
 
     //vector3
     private Vector3 playerPosition;
@@ -41,9 +43,13 @@ public class Slim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Movment();
-        Instantiate(floorSlime);
-    }    
+        cooldown
+        if(!idk)
+        {
+            //Movment();
+            Instantiate(floorSlime);
+        }
+    }
     /*
     //moves and rotates the player
     void Movment()
@@ -66,15 +72,18 @@ public class Slim : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    //enemy hits player
+    */
     void OnCollisionEnter(Collision otherObj)
     {
-        if (otherObj.gameObject.tag == "Player")
+        if (otherObj.gameObject.tag == "FloorSlime")
         {
-            playerScipt.damage(1);
+            idk = true;
+
+        }
+        else
+        {
 
         }
     }
-    */
+    
 }

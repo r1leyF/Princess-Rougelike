@@ -17,12 +17,13 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        goblin = GameObject.Find("goblin").GetComponent<Goblin>();
+        goblin = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Goblin>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         currHealth = maxHealth;
         HealthBar.instance.SetupHearts(currHealth);
-    }
 
+    }
+    
     // Update is called once per frame
     void Update()
     {
@@ -44,7 +45,7 @@ public class Player : MonoBehaviour
         }
         //if the player didn't have a weapon make the chest empty
         else
-        {
+        { 
             chest.itemIndex = -1;
         }
 
@@ -91,5 +92,6 @@ public class Player : MonoBehaviour
             return;
         wpnInfo = currWeapon.GetComponent<Weapon>();
         Gizmos.DrawWireSphere(attackPoint.position, wpnInfo.range);
+
     }
 }
