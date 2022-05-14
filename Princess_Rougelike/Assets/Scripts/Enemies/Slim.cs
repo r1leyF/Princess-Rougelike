@@ -7,8 +7,10 @@ public class Slim : MonoBehaviour
     //floats
     private float coolDown = 0.5f;
 
+
     //gameobject
     public GameObject floorSlime;
+
 
     // Start is called before the first frame update
     void Start()
@@ -27,4 +29,5 @@ public class Slim : MonoBehaviour
             coolDown = 0.5f;
         }
     }
+
 }

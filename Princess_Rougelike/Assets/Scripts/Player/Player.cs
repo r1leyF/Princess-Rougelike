@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     Weapon wpnInfo;
     GameManager gameManager;
     Enemy monster;
+    Enemy enemin;
 
     public string hitenemy;
     // Start is called before the first frame update
@@ -71,7 +72,8 @@ public class Player : MonoBehaviour
             //exp - enemy.damage(wpnInfo.damage)
             Debug.Log("we hit " + enemy.name);
             hitenemy = enemy.name;
-            monster.TakeDamage(wpnInfo.damage);
+            enemin = GameObject.Find(hitenemy).GetComponent<Enemy>();
+            enemin.TakeDamage(wpnInfo.damage);
         }
     }
 

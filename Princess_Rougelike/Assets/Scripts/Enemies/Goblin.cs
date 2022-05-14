@@ -7,6 +7,7 @@ public class Goblin : MonoBehaviour
     //float
     private float coolDown = 3;
     private float speed = 10;
+    private float heatlh = 10;
 
     //game objectt
     public GameObject player;
@@ -14,11 +15,13 @@ public class Goblin : MonoBehaviour
     //vecotr 3
     private Vector3 playerPosition;
 
+
     // Start is called before the first frame update
     void Start()
     {
-        //gets player shit
+        //gets player 
         player = GameObject.Find("Player");
+
     }
 
     void Update()
