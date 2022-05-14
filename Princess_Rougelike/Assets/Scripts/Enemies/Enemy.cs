@@ -31,7 +31,9 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         Movment();
+
     }
 
 
@@ -53,6 +55,7 @@ public class Enemy : MonoBehaviour
         //moves bullets
         transform.Translate(Vector3.forward * Time.deltaTime * speed);
     }
+
 
     // enemy takes damage
     public void TakeDamage(float dmg)
