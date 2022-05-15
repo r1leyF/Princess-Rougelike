@@ -330,7 +330,7 @@ Transform:
   m_GameObject: {fileID: 187312179}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.0611153, y: 0.86, z: 0.33}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
   - {fileID: 977708804}
   m_Father: {fileID: 0}
@@ -526,7 +526,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heatlh: 10
   speed: 1
-  damage: 1
+  damage: 0.5
   player: {fileID: 187312179}
 --- !u!1 &403526325
 GameObject:
@@ -653,7 +653,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heatlh: 5
   speed: 1
-  damage: 1
+  damage: 0
   player: {fileID: 187312179}
 --- !u!1 &436903913
 GameObject:

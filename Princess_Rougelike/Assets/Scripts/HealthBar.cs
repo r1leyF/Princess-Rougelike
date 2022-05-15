@@ -8,7 +8,7 @@ public class HealthBar : MonoBehaviour
     [SerializeField] GameObject heartContainerPrefab;
     [SerializeField] List<GameObject> heartContainers;
 
-    int totalHearts;
+    float totalHearts;
     float currHearts;
     HeartContainer currContainer;
 
@@ -19,7 +19,7 @@ public class HealthBar : MonoBehaviour
         heartContainers = new List<GameObject>();
     }
 
-    public void SetupHearts(int heartsIn)
+    public void SetupHearts(float heartsIn)
     {
         heartContainers.Clear();
 

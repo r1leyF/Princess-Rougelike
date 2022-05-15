@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public int maxHealth = 5;
-    public int currHealth;
+    public float currHealth;
     public GameObject currWeapon;
     public Transform attackPoint;
     public LayerMask enemyLayers;
@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        monster = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemy>();
+        //monster = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemy>();
     }
     //set the weapon of a player when interacting with a chest
     public void SetWeapon(GameObject weapon, Chest chest)
@@ -77,7 +77,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void damage(int dmg)
+    public void damage(float dmg)
     {
         currHealth -= dmg;
         HealthBar.instance.RemoveHearts(dmg);

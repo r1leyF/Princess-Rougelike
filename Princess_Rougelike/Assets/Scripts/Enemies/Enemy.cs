@@ -7,9 +7,7 @@ public class Enemy : MonoBehaviour
     //floats
     public float heatlh;
     public float speed;
-
-    //int
-    public int damage;
+    public float damage;    
 
     //scpits
     Player playerScipt;

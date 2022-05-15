@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8778130831460861314}
   - component: {fileID: 8778130831460861315}
   - component: {fileID: 8778130831460861312}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: floor slime
   m_TagString: FloorSlime
   m_Icon: {fileID: 0}

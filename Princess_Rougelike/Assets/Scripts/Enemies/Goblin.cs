@@ -27,7 +27,7 @@ public class Goblin : MonoBehaviour
     void Update()
     {
             coolDown = coolDown - Time.deltaTime;
-        Debug.Log(coolDown);
+        //Debug.Log(coolDown);
         if(coolDown <0)
         {
             Jump();

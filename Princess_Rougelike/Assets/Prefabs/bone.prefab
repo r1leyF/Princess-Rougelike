@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6381062375819427205}
   - component: {fileID: 7053353031294005853}
   - component: {fileID: 1810868649228715589}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,3 +109,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skeleton: {fileID: 0}
+  player: {fileID: 0}
