@@ -288,9 +288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heartContainerPrefab: {fileID: 167961081447885298, guid: e9d71d762d690de47be400cff20f928e, type: 3}
-  heartContainers:
-  - {fileID: 0}
-  - {fileID: 0}
+  heartContainers: []
 --- !u!114 &85296623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1444,7 +1442,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74743869be3dbf446aabacee0b3ba5d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 5
   currHealth: 0
   currWeapon: {fileID: 0}
   attackPoint: {fileID: 1814046236}

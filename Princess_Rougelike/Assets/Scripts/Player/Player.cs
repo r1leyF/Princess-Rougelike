@@ -82,8 +82,7 @@ public class Player : MonoBehaviour
     public void damage(float dmg)
     {
         currHealth -= dmg;
-        //I commented this out becuse player would not die becuse healthbar is broken and code couldnt get to if statement
-        //HealthBar.instance.RemoveHearts(dmg);
+        HealthBar.instance.RemoveHearts(dmg);
         if(currHealth <= 0)
         {
             gameManager.gameOver();
