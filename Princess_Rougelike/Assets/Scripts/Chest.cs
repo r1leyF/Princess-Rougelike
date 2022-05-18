@@ -6,6 +6,8 @@ public class Chest : MonoBehaviour
 {
     public int itemIndex;
     public bool isEmpty = false;
+    public bool opened = false;
+    public Animator animator;
     GameManager manager;
     // Start is called before the first frame update
     void Start()
@@ -22,6 +24,11 @@ public class Chest : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (!opened && other.CompareTag("Player"))
+        {
+            animator.SetTrigger("Opened");
+            opened = true;
+        }
         //checks if the collision is with the player and if the chest is empty before switing items
         if (!isEmpty && other.CompareTag("Player"))
         {
@@ -35,7 +42,14 @@ public class Chest : MonoBehaviour
             if(itemIndex < 0)
             {
                 isEmpty = true;
-                //make chest look open
+            }
+            else
+            {
+                if(transform.childCount > 1)
+                {
+                    Destroy(transform.GetChild(1).gameObject);
+                }
+                Instantiate(manager.allWeapons[itemIndex], transform.position + new Vector3(0,0.5f,0.3f), transform.rotation, transform);
             }
         }
     }

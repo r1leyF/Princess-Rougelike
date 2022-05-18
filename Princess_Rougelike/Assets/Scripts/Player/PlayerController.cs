@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     float verticalInput;
     public float speed;
     public Player player;
+    public Animator animator;
     float nextAttackTime = 0f;
     public static bool canMove;
 
@@ -40,6 +41,14 @@ public class PlayerController : MonoBehaviour
     {
         if (canMove)
         {
+            if(horizontalInput != 0 || verticalInput != 0)
+            {
+                animator.SetBool("moving", true);
+            }
+            else
+            {
+                animator.SetBool("moving", false);
+            }
             transform.Translate(Vector3.right.normalized * horizontalInput * Time.deltaTime * speed);
             transform.Translate(Vector3.forward.normalized * verticalInput * Time.deltaTime * speed);
         }

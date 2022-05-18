@@ -22,7 +22,7 @@ public class FloorSlime : MonoBehaviour
         //finds slime
         slime = GameObject.Find("Slime");
 
-        transform.position = new Vector3 (slime.transform.position.x, slime.transform.position.y, slime.transform.position.z);
+        transform.position = new Vector3 (slime.transform.position.x, slime.transform.position.y - 0.68f, slime.transform.position.z);
 
     }
 
