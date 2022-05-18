@@ -24,6 +24,8 @@ public class Enemy : MonoBehaviour
         //gets player shit
         player = GameObject.Find("Player");
         playerScipt = GameObject.Find("Player").GetComponent<Player>();
+
+        transform.position = new Vector3(Random.Range(-72.02f, -33.68f), 0.6f, Random.Range(-9.54f, 12.79f));
     }
 
     // Update is called once per frame
