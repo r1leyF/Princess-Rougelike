@@ -51,18 +51,20 @@ public class Player : MonoBehaviour
         }
 
         //instantiates weapon prefab and assighs it to currWeapon
-        currWeapon = Instantiate(weapon, transform.GetChild(0).GetChild(1).transform.position, transform.GetChild(0).rotation, transform.GetChild(0));
+        currWeapon = Instantiate(weapon, transform.GetChild(0).GetChild(0).transform.position, transform.GetChild(0).rotation, transform.GetChild(0));
 
 
     }
     //expects player to have a weapon
     public void Attack()
     {
-
-        //play attack animation
+        Debug.Log("attack");
 
         //gets the Weapon class from player's current weapon
         wpnInfo = currWeapon.GetComponent<Weapon>();
+
+        //plays animation
+        wpnInfo.playAnim();
 
         Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, wpnInfo.range, enemyLayers);
 

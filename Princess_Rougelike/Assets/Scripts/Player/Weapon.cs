@@ -10,15 +10,21 @@ public class Weapon : MonoBehaviour
     public float atkRate;
     public float knockback;
     public int weaponIndex;
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void playAnim()
+    {
+        animator.SetTrigger("attack");
+        animator.SetTrigger("attack");
     }
 }
