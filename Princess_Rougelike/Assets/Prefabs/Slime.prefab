@@ -33,7 +33,7 @@ GameObject:
   - component: {fileID: 2272528281187291900}
   m_Layer: 3
   m_Name: Slime
-  m_TagString: Enemy
+  m_TagString: Slime
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,6 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b08c9143678ff148ad2d6a961877617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 0
   floorSlime: {fileID: 8778130831460861313, guid: 4fa0f77c07f5ca648934ef0c7b84857a, type: 3}
 --- !u!1001 &2272528280088830640
 PrefabInstance:
