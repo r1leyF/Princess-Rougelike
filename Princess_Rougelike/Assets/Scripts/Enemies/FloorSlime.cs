@@ -8,10 +8,12 @@ public class FloorSlime : MonoBehaviour
     private float heatlh = 3;
 
     //scpits
-    Player playerScipt;
+    public Player playerScipt;
 
     //gameobject
-    public GameObject slime;
+    public GameObject[] slime;
+
+    public Slim slimeScript;
 
     // Start is called before the first frame update
     void Start()
@@ -19,10 +21,6 @@ public class FloorSlime : MonoBehaviour
         //finds player
         playerScipt = GameObject.Find("Player").GetComponent<Player>();
 
-        //finds slime
-        slime = GameObject.Find("Slime");
-
-        transform.position = new Vector3 (slime.transform.position.x, slime.transform.position.y - 0.185f, slime.transform.position.z);
     }
 
     // Update is called once per frame

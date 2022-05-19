@@ -5,17 +5,17 @@ using UnityEngine;
 public class Slim : MonoBehaviour
 {
     //floats
-    private float coolDown = 0.5f;
+    private float coolDown = 0.7f;
 
 
     //gameobject
     public GameObject floorSlime;
 
 
-
     // Start is called before the first frame update
     void Start()
     {
+
     }
 
     // Update is called once per frame
@@ -25,8 +25,8 @@ public class Slim : MonoBehaviour
         if (coolDown <= 0)
         {
             //Movment();
-            Instantiate(floorSlime);
-            coolDown = 0.5f;
+            Instantiate(floorSlime, transform.position, Quaternion.identity);
+            coolDown = 0.7f;
         }
     }
 

@@ -9,6 +9,7 @@ TagManager:
   - RoomSpawnPoint
   - Enemy
   - FloorSlime
+  - Slime
   layers:
   - Default
   - TransparentFX

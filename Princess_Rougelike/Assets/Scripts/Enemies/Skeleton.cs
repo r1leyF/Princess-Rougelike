@@ -24,7 +24,7 @@ public class Skeleton : MonoBehaviour
         coolDown -= Time.deltaTime;
         if (coolDown < 0)
         {
-            Instantiate(bone);
+            Instantiate(bone, transform.position, Quaternion.identity);
             coolDown = 2;
         }
     }
