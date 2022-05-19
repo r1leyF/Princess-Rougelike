@@ -5,15 +5,12 @@ using UnityEngine;
 public class FloorSlime : MonoBehaviour
 {
     //floats
-    private float heatlh = 3;
+    private float heatlh = 5;
 
     //scpits
     public Player playerScipt;
 
     //gameobject
-    public GameObject[] slime;
-
-    public Slim slimeScript;
 
     // Start is called before the first frame update
     void Start()

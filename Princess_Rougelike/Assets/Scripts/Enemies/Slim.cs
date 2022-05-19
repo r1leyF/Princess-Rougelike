@@ -5,7 +5,7 @@ using UnityEngine;
 public class Slim : MonoBehaviour
 {
     //floats
-    private float coolDown = 0.7f;
+    private float coolDown = 1f;
 
 
     //gameobject
@@ -26,7 +26,7 @@ public class Slim : MonoBehaviour
         {
             //Movment();
             Instantiate(floorSlime, transform.position, Quaternion.identity);
-            coolDown = 0.7f;
+            coolDown = 1;
         }
     }
 
