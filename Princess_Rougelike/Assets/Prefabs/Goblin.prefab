@@ -30,6 +30,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -41.67, y: 0.6, z: 3.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3776689847423755766}
   m_Father: {fileID: 0}
@@ -66,7 +67,7 @@ MonoBehaviour:
   player: {fileID: 0}
   slimeHurt: {fileID: 8300000, guid: ebbe485e048418640bffd2cb1dd9c2a1, type: 3}
   slimeDie: {fileID: 8300000, guid: 265948ae8e5b4d1489a91a665c11dadc, type: 3}
-  ghostHurt: {fileID: 8300000, guid: 6dcf1a660c3158144ad48cb4a6acefb0, type: 3}
+  ghostHurt: {fileID: 8300000, guid: 4bda45600ec49d44ab97b130b8e8edf0, type: 3}
   ghostDie: {fileID: 8300000, guid: 4bda45600ec49d44ab97b130b8e8edf0, type: 3}
   goblinHurt: {fileID: 8300000, guid: 84f9b28edfea343439a9f734c17db131, type: 3}
   goblinDie: {fileID: 8300000, guid: a80db332b3a573a4cb6c31a4b279fcbd, type: 3}

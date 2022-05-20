@@ -89,12 +89,12 @@ public class Player : MonoBehaviour
 
     public void damage(float dmg)
     {
-        playerAudio.PlayOneShot(hurt, 0.3f);
+        playerAudio.PlayOneShot(hurt, 0.2f);
         currHealth -= dmg;
         HealthBar.instance.RemoveHearts(dmg);
         if(currHealth <= 0)
         {
-            playerAudio.PlayOneShot(died, 0.3f);
+            playerAudio.PlayOneShot(died, 0.2f);
             gameManager.gameOver();
         }
     }

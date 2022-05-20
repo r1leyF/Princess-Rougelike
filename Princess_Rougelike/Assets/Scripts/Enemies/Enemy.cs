@@ -93,7 +93,7 @@ public class Enemy : MonoBehaviour
         }
         if (CompareTag("Ghost"))
         {
-            enemyAudio.PlayOneShot(ghostHurt, 1);
+            enemyAudio.PlayOneShot(ghostHurt, 0.3f);
         }
         if (CompareTag("Goblin"))
         {
@@ -108,7 +108,7 @@ public class Enemy : MonoBehaviour
             }
             if (CompareTag("Ghost"))
             {
-                enemyAudio.PlayOneShot(ghostDie, 1);
+                enemyAudio.PlayOneShot(ghostDie, 0.3f);
             }
             if (CompareTag("Goblin"))
             {
