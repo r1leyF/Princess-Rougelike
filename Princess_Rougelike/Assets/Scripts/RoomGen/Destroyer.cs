@@ -5,7 +5,10 @@ using UnityEngine;
 public class Destroyer : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other){
-		Destroy(other.gameObject);
+		if (other.tag.Equals("SpawnPoint"))
+		{
+			Destroy(other.gameObject);
+		}
 		
 	}
 }
