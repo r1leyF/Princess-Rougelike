@@ -9,11 +9,15 @@ public class Chest : MonoBehaviour
     public bool opened = false;
     public Animator animator;
     GameManager manager;
+
+    public AudioClip open;
+    AudioSource chestAudio;
     // Start is called before the first frame update
     void Start()
     {
         //gets a reference to the GameManager script
         manager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        chestAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -26,6 +30,7 @@ public class Chest : MonoBehaviour
     {
         if (!opened && other.CompareTag("Player"))
         {
+            chestAudio.PlayOneShot(open,2);
             animator.SetTrigger("Opened");
             opened = true;
         }

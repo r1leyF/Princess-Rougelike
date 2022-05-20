@@ -9,13 +9,13 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public Player player;
     public Animator animator;
+    GameManager manager;
     float nextAttackTime = 0f;
-    public static bool canMove;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        manager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     {
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
-        if (Time.time >= nextAttackTime && canMove)
+        if (Time.time >= nextAttackTime && manager.gameRunning)
         {
             if (Input.GetMouseButtonDown(0) && player.currWeapon != null)
             {
@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (canMove)
+        if (manager.gameRunning)
         {
             if(horizontalInput != 0 || verticalInput != 0)
             {

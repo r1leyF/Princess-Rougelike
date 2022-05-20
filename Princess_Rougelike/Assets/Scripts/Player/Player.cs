@@ -14,12 +14,19 @@ public class Player : MonoBehaviour
     Enemy monster;
     Enemy enemin;
 
+    public AudioClip swoosh;
+    public AudioClip hurt;
+    public AudioClip died;
+
+    private AudioSource playerAudio;
+
     public string hitenemy;
     // Start is called before the first frame update
     void Start()
     {
-        monster = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemy>();
+        //monster = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemy>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        playerAudio = GetComponent<AudioSource>();
         currHealth = maxHealth;
         HealthBar.instance.SetupHearts(currHealth);
 
@@ -59,6 +66,7 @@ public class Player : MonoBehaviour
     public void Attack()
     {
         Debug.Log("attack");
+        playerAudio.PlayOneShot(swoosh, 3);
 
         //gets the Weapon class from player's current weapon
         wpnInfo = currWeapon.GetComponent<Weapon>();
@@ -81,10 +89,12 @@ public class Player : MonoBehaviour
 
     public void damage(float dmg)
     {
+        playerAudio.PlayOneShot(hurt, 0.3f);
         currHealth -= dmg;
         HealthBar.instance.RemoveHearts(dmg);
         if(currHealth <= 0)
         {
+            playerAudio.PlayOneShot(died, 0.3f);
             gameManager.gameOver();
         }
     }

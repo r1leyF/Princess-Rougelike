@@ -9,12 +9,11 @@ public class GameManager : MonoBehaviour
     public GameObject[] allWeapons;
     public GameObject[] allItems;
     public GameObject gameOverScreen;
+    public bool gameRunning = true;
     // Start is called before the first frame update
     void Start()
     {
         gameOverScreen.SetActive(false);
-        FollowMouse.canFollow = true;
-        PlayerController.canMove = true;
 
     }
 
@@ -26,8 +25,7 @@ public class GameManager : MonoBehaviour
 
     public void gameOver()
     {
-        FollowMouse.canFollow = false;
-        PlayerController.canMove = false;
+        gameRunning = false;
         gameOverScreen.SetActive(true);
     }
     public void restart()
