@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     GameManager manager;
     float nextAttackTime = 0f;
+    public Transform camTransform;
 
     // Start is called before the first frame update
     void Start()
@@ -32,9 +33,9 @@ public class PlayerController : MonoBehaviour
                 nextAttackTime = Time.time + 1 / player.currWeapon.GetComponent<Weapon>().atkRate;
             }
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+        if(transform.position.y < -5)
         {
-            player.damage(1);
+            player.damage(10);
         }
     }
     private void FixedUpdate()

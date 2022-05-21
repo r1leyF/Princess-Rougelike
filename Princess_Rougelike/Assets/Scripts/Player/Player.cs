@@ -79,7 +79,6 @@ public class Player : MonoBehaviour
         foreach(Collider enemy in hitEnemies)
         {
             //damage enemy && do knock back
-            //exp - enemy.damage(wpnInfo.damage)
             Debug.Log("we hit " + enemy.name);
             hitenemy = enemy.name;
             enemin = GameObject.Find(hitenemy).GetComponent<Enemy>();

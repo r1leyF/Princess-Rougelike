@@ -20,7 +20,6 @@ public class MoveRoom : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -31,7 +30,7 @@ public class MoveRoom : MonoBehaviour
             {
                 if(manager.level == 1)
                 {
-                    spawn.SpawnEnemies(5, 9, 1, 0, parent.transform);
+                    spawn.SpawnEnemies(3, 9, 1, 0, parent.transform);
                 }
                 else if (manager.level == 2)
                 {
