@@ -140,7 +140,6 @@ GameObject:
   - component: {fileID: 923886536972076441}
   - component: {fileID: 7660866014289760057}
   - component: {fileID: 1385198175985183189}
-  - component: {fileID: 813384131272711577}
   - component: {fileID: 586465994625177703}
   - component: {fileID: 4949910561470341044}
   - component: {fileID: 1877600808663763258}
@@ -216,20 +215,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &813384131272711577
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5725961921278612108}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!65 &586465994625177703
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -258,6 +243,7 @@ MonoBehaviour:
   cam: {fileID: 0}
   camPoint: {fileID: 5115005079428948865}
   parent: {fileID: 3194817234403552014}
+  doors: {fileID: 0}
 --- !u!65 &1877600808663763258
 BoxCollider:
   m_ObjectHideFlags: 0
