@@ -12,11 +12,13 @@ public class PlayerController : MonoBehaviour
     GameManager manager;
     float nextAttackTime = 0f;
     public Transform camTransform;
+    private Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
     {
         manager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -49,9 +51,9 @@ public class PlayerController : MonoBehaviour
             else
             {
                 animator.SetBool("moving", false);
+                rb.velocity = new Vector3(0, 0, 0);
             }
-            transform.Translate(Vector3.right.normalized * horizontalInput * Time.deltaTime * speed);
-            transform.Translate(Vector3.forward.normalized * verticalInput * Time.deltaTime * speed);
+            rb.velocity = new Vector3(horizontalInput * Time.deltaTime * speed * 50, 0, verticalInput * Time.deltaTime * speed * 50);
         }
     }
     
