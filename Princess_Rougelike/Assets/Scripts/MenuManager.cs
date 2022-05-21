@@ -21,6 +21,8 @@ public class MenuManager : MonoBehaviour
     public GameObject titleScreen;
     public GameObject controlsScreen;
 
+    LevelLoader loader;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +36,8 @@ public class MenuManager : MonoBehaviour
         aboutScreen.SetActive(false);
         controlsScreen.SetActive(false);
         titleScreen.SetActive(true);
+
+        loader = GameObject.Find("LevelLoad").GetComponent<LevelLoader>();
     }
 
     // Update is called once per frame
@@ -53,7 +57,7 @@ public class MenuManager : MonoBehaviour
     }
     public void StartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        loader.LoadLevel(SceneManager.GetActiveScene().buildIndex + 1);
     }
     public void ShowAbout()
     {

@@ -12,11 +12,13 @@ public class GameManager : MonoBehaviour
     public bool gameRunning = true;
     public int enemyCount;
     public int level;
+    LevelLoader loader;
     // Start is called before the first frame update
     void Start()
     {
         gameOverScreen.SetActive(false);
         level = 1;
+        loader = GameObject.Find("LevelLoad").GetComponent<LevelLoader>();
     }
 
     // Update is called once per frame
@@ -32,7 +34,7 @@ public class GameManager : MonoBehaviour
     }
     public void restart()
     {
-        SceneManager.LoadScene(0);
+        loader.LoadLevel(0);
     }
 
 }

@@ -114,7 +114,11 @@ public class Enemy : MonoBehaviour
             {
                 enemyAudio.PlayOneShot(goblinDie, 1);
             }
-            manager.enemyCount--;
+            //prevents player from hitting an alreday dead enemy and incrementing the enemy count
+            if (!dead)
+            {
+                manager.enemyCount--;
+            }
             dead = true;
         }
     }
