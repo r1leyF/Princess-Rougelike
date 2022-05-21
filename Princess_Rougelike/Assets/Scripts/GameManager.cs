@@ -10,11 +10,13 @@ public class GameManager : MonoBehaviour
     public GameObject[] allItems;
     public GameObject gameOverScreen;
     public bool gameRunning = true;
+    public int enemyCount;
+    public int level;
     // Start is called before the first frame update
     void Start()
     {
         gameOverScreen.SetActive(false);
-
+        level = 1;
     }
 
     // Update is called once per frame

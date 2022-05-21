@@ -1296,8 +1296,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - {fileID: 8127547688289098666, guid: f3684460cf4969f42b77be02dc585498, type: 3}
   - {fileID: 3739049909328905862, guid: 366b1868ba7fe6844ae62a1470cc88f6, type: 3}
+  - {fileID: 8127547688289098666, guid: f3684460cf4969f42b77be02dc585498, type: 3}
   - {fileID: 2272528281187291901, guid: 40b5e477b77a4994eb7e3b30ffb69f9f, type: 3}
 --- !u!4 &1507832562
 Transform:
@@ -1776,6 +1776,8 @@ MonoBehaviour:
   allItems: []
   gameOverScreen: {fileID: 791545893}
   gameRunning: 1
+  enemyCount: 0
+  level: 1
 --- !u!1001 &7426420218281143321
 PrefabInstance:
   m_ObjectHideFlags: 0

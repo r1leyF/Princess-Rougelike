@@ -128,6 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   camPoint: {fileID: 6248940309453075811}
+  parent: {fileID: 7045289483016222096}
 --- !u!65 &3230943172747490530
 BoxCollider:
   m_ObjectHideFlags: 0

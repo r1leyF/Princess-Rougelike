@@ -41,7 +41,7 @@ public class Enemy : MonoBehaviour
         manager = GameObject.Find("GameManager").GetComponent<GameManager>();
         enemyAudio = GetComponent<AudioSource>();
 
-        transform.position = new Vector3(Random.Range(-18.21f, 18.34f), 0.0f, Random.Range(-7.71f, 11.11f));
+        transform.position = new Vector3(transform.position.x + Random.Range(-15f, 15f), 0.0f, transform.position.z + Random.Range(-9f, 9f));
     }
 
     // Update is called once per frame
@@ -114,6 +114,7 @@ public class Enemy : MonoBehaviour
             {
                 enemyAudio.PlayOneShot(goblinDie, 1);
             }
+            manager.enemyCount--;
             dead = true;
         }
     }

@@ -12,6 +12,7 @@ TagManager:
   - Slime
   - Ghost
   - Goblin
+  - EnemyRoom
   layers:
   - Default
   - TransparentFX
