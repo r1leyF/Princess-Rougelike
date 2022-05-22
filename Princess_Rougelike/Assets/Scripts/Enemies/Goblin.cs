@@ -6,11 +6,12 @@ public class Goblin : MonoBehaviour
 {
     //float
     private float coolDown = 3;
-    private float speed = 10;
+    private float jumpDistance = 20;
     private float heatlh = 10;
 
     //game objectt
     public GameObject player;
+    Rigidbody rb;
 
     //vecotr 3
     private Vector3 playerPosition;
@@ -21,6 +22,8 @@ public class Goblin : MonoBehaviour
     {
         //gets player 
         player = GameObject.Find("Player");
+        rb = GetComponent<Rigidbody>();
+
 
     }
 
@@ -46,6 +49,6 @@ public class Goblin : MonoBehaviour
         playerPosition = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
 
         //moves bullets
-        transform.Translate(Vector3.forward * Time.deltaTime * speed);
+        transform.Translate(Vector3.forward * Time.deltaTime * jumpDistance);
     }
 }
