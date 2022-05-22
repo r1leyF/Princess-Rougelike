@@ -7,10 +7,10 @@ public class Goblin : MonoBehaviour
 {
     //float
     private float coolDown = 3;
-    private float jumpDistance = 25;
+    private float jumpDistance = 32;
     private float speed = 4;
     private float heatlh = 10;
-    private float attackDistance = 25;
+    private float attackDistance = 13;
 
     //game objectt
     public GameObject player;
@@ -40,11 +40,11 @@ public class Goblin : MonoBehaviour
         {
             followPlayer();
             float distance = Vector3.Distance(transform.position,player.transform.position);
+            Debug.Log(distance);
             if ( distance <= attackDistance)
             {
-                
+                Jump();
             }
-            Jump();
         }
 
     }
