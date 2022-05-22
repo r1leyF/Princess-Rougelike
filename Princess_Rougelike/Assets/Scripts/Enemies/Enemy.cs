@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
@@ -16,7 +15,6 @@ public class Enemy : MonoBehaviour
     //scpits
     Player playerScipt;
     GameManager manager;
-    NavMeshAgent agent;
 
     //game objectt
     public GameObject player;
@@ -42,19 +40,14 @@ public class Enemy : MonoBehaviour
         playerScipt = GameObject.Find("Player").GetComponent<Player>();
         manager = GameObject.Find("GameManager").GetComponent<GameManager>();
         enemyAudio = GetComponent<AudioSource>();
-        agent = GetComponent<NavMeshAgent>();
-        agent.speed = speed;
+        
         transform.position = new Vector3(transform.position.x + Random.Range(-15f, 15f), 0.0f, transform.position.z + Random.Range(-9f, 9f));
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (manager.gameRunning)
-        {
-            Movment();
-        }
-        if (transform.position.y < -3)
+        if (dead)
         {
             Destroy(gameObject);
         }
@@ -79,10 +72,10 @@ public class Enemy : MonoBehaviour
     {
         //rotate bullets twards player
         playerPosition = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
-        transform.LookAt(playerPosition);
+ 
 
         //moves bullets
-        agent.SetDestination(playerPosition);
+        
         //transform.Translate(Vector3.forward * Time.deltaTime * speed);
     }
 
@@ -123,8 +116,6 @@ public class Enemy : MonoBehaviour
             {
                 manager.enemyCount--;
             }
-
-            Destroy(gameObject);
             dead = true;
         }
     }
