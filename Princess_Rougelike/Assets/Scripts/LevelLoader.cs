@@ -23,10 +23,22 @@ public class LevelLoader : MonoBehaviour
     {
         StartCoroutine(Load(buildIndex));
     }
+    public void StartTransition()
+    {
+        animator.SetTrigger("ExitScene");
+        //animator.ResetTrigger("ExitScene");
+    }
+    public void EndTransition()
+    {
+        animator.SetTrigger("StartTransition");
+        //animator.ResetTrigger("StartTransition");
+    }
 
     IEnumerator Load(int index)
     {
         animator.SetTrigger("ExitScene");
+
+        animator.ResetTrigger("ExitScene");
 
         yield return new WaitForSeconds(transitionTime);
 

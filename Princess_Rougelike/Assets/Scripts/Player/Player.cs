@@ -29,7 +29,6 @@ public class Player : MonoBehaviour
         playerAudio = GetComponent<AudioSource>();
         currHealth = maxHealth;
         HealthBar.instance.SetupHearts(currHealth);
-
     }
     
     // Update is called once per frame
@@ -59,8 +58,17 @@ public class Player : MonoBehaviour
 
         //instantiates weapon prefab and assighs it to currWeapon
         currWeapon = Instantiate(weapon, transform.GetChild(0).GetChild(0).transform.position, transform.GetChild(0).rotation, transform.GetChild(0));
+    }
+    public void SetWeapon(GameObject weapon)
+    {
+        //checks if the player already has a weapon
+        if (currWeapon != null)
+        {
+            Destroy(currWeapon);
+        }
 
-
+        //instantiates weapon prefab and assighs it to currWeapon
+        currWeapon = Instantiate(weapon, transform.GetChild(0).GetChild(0).transform.position, transform.GetChild(0).rotation, transform.GetChild(0));
     }
     //expects player to have a weapon
     public void Attack()
