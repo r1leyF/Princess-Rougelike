@@ -60,13 +60,6 @@ public class Enemy : MonoBehaviour
 
 
     //enemy hits player
-    void OnCollisionEnter(Collision otherObj)
-    {
-        if (otherObj.gameObject.tag == "Player" && manager.gameRunning)
-        {
-            playerScipt.damage(damage);
-        }
-    }
 
     void Movment()
     {
@@ -79,7 +72,10 @@ public class Enemy : MonoBehaviour
         //transform.Translate(Vector3.forward * Time.deltaTime * speed);
     }
 
-
+    public void attack()
+    {
+        playerScipt.damage(damage);
+    }
     // enemy takes damage
     public void TakeDamage(float dmg)
     {

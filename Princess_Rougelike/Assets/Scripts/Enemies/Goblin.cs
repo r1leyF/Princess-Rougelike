@@ -6,17 +6,17 @@ using UnityEngine.AI;
 public class Goblin : MonoBehaviour
 {
     //float
-    private float startCoolDown = .5f;
+    private float startCoolDown = .9f;
     private float coolDown;
     private float jumpDistance = 32;
-    private float speed = 4;
+    private float speed = 7;
     private float heatlh = 10;
-    private float attackDistance = 10;
+    private float attackDistance = 12;
 
     //game objectt
     public GameObject player;
-    Rigidbody rb;
     NavMeshAgent agent;
+    GameManager manager;
 
     //vecotr 3
     private Vector3 playerPosition;
@@ -27,21 +27,28 @@ public class Goblin : MonoBehaviour
     {
         //gets player 
         player = GameObject.Find("Player");
-        rb = GetComponent<Rigidbody>();
         agent = GetComponent<NavMeshAgent>();
         agent.speed = speed;
         coolDown = startCoolDown;
+        manager = GameObject.Find("GameManager").GetComponent<GameManager>();
 
     }
 
+    void OnCollisionEnter(Collision otherObj)
+    {
+        if (otherObj.gameObject.tag == "Player" && manager.gameRunning)
+        {
+            otherObj.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.forward * 5,ForceMode.Impulse);
+            GetComponent<Enemy>().attack();
+        }
+    }
     void Update()
     {
         //Debug.Log(coolDown);
-        if (GameObject.Find("GameManager").GetComponent<GameManager>().gameRunning)
+        if (manager.gameRunning)
         {
             transform.LookAt(player.transform.position);
             float distance = Vector3.Distance(transform.position,player.transform.position);
-            Debug.Log(distance);
             if (distance <= attackDistance)
             {
                 agent.isStopped = true;
@@ -65,7 +72,7 @@ public class Goblin : MonoBehaviour
         {
             transform.Translate(Vector3.forward * Time.deltaTime * jumpDistance);
         }
-        if (coolDown <= -0.2f)
+        if (coolDown <= -0.27f)
         {
             coolDown = startCoolDown;
         }
