@@ -38,8 +38,6 @@ public class LevelLoader : MonoBehaviour
     {
         animator.SetTrigger("ExitScene");
 
-        animator.ResetTrigger("ExitScene");
-
         yield return new WaitForSeconds(transitionTime);
 
         SceneManager.LoadScene(index);
