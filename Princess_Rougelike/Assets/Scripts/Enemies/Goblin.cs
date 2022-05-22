@@ -30,6 +30,7 @@ public class Goblin : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         agent = GetComponent<NavMeshAgent>();
         agent.speed = speed;
+        coolDown = startCoolDown;
 
     }
 
@@ -66,7 +67,7 @@ public class Goblin : MonoBehaviour
         }
         if (coolDown <= -0.2f)
         {
-            coolDown = 3;
+            coolDown = startCoolDown;
         }
 
     }
