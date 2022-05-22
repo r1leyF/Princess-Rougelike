@@ -6,11 +6,12 @@ using UnityEngine.AI;
 public class Goblin : MonoBehaviour
 {
     //float
-    private float coolDown = 3;
+    private float startCoolDown = .5f;
+    private float coolDown;
     private float jumpDistance = 32;
     private float speed = 4;
     private float heatlh = 10;
-    private float attackDistance = 13;
+    private float attackDistance = 10;
 
     //game objectt
     public GameObject player;
@@ -34,16 +35,23 @@ public class Goblin : MonoBehaviour
 
     void Update()
     {
-        coolDown = coolDown - Time.deltaTime;
         //Debug.Log(coolDown);
         if (GameObject.Find("GameManager").GetComponent<GameManager>().gameRunning)
         {
-            followPlayer();
+            transform.LookAt(player.transform.position);
             float distance = Vector3.Distance(transform.position,player.transform.position);
             Debug.Log(distance);
-            if ( distance <= attackDistance)
+            if (distance <= attackDistance)
             {
+                agent.isStopped = true;
+                coolDown = coolDown - Time.deltaTime;
                 Jump();
+            }
+            else
+            {
+                agent.isStopped = false;
+                followPlayer();
+
             }
         }
 
@@ -64,7 +72,6 @@ public class Goblin : MonoBehaviour
     }
     void followPlayer()
     {
-        transform.LookAt(player.transform.position);
         agent.SetDestination(player.transform.position);
     }
 }
