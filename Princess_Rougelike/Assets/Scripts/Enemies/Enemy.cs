@@ -49,6 +49,7 @@ public class Enemy : MonoBehaviour
     {
         if (dead)
         {
+
             Destroy(gameObject);
         }
         if (dead)
@@ -112,7 +113,14 @@ public class Enemy : MonoBehaviour
             {
                 manager.enemyCount--;
             }
-            dead = true;
+            StartCoroutine(die());
         }
+    }
+    IEnumerator die()
+    {
+        Debug.Log("k");
+        yield return new WaitForSeconds(.1f);
+        Debug.Log("Dead");
+        dead = true;
     }
 }
