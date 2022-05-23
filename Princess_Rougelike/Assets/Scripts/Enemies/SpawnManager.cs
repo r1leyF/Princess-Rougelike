@@ -6,6 +6,7 @@ public class SpawnManager : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject[] enemies;
+    public GameObject boss;
     GameManager manager;
     private int enemySpawned;
     void Start()
@@ -45,5 +46,13 @@ public class SpawnManager : MonoBehaviour
             }
         }
         manager.enemyCount = eNum;
+    }
+
+    public void SpawnBoss(Transform spawnPoint)
+    {
+        Debug.Log(spawnPoint);
+
+        Instantiate(boss, spawnPoint.position, transform.rotation);
+        Debug.Log(spawnPoint);
     }
 }

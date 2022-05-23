@@ -7,13 +7,17 @@ public class TrapDoor : MonoBehaviour
 {
     public Animator animator;
     public Transform spawnPoint;
+    public GameObject boss;
+
     GameManager manager;
     LevelLoader loader;
+    SpawnManager spawnManager;
     // Start is called before the first frame update
     void Start()
     {
         manager = GameObject.Find("GameManager").GetComponent<GameManager>();
         loader = GameObject.Find("LevelLoad").GetComponent<LevelLoader>();
+        spawnManager = GameObject.Find("SpawnMangerr").GetComponent<SpawnManager>();
     }
 
     // Update is called once per frame
@@ -35,6 +39,9 @@ public class TrapDoor : MonoBehaviour
         loader.StartTransition();
         yield return new WaitForSeconds(2);
         player.position = spawnPoint.position;
+        Debug.Log("good");
+        Instantiate(boss, spawnPoint.position, transform.rotation);
+        Debug.Log("okay");
         yield return new WaitForSeconds(0.5f);
         manager.gameRunning = true;
         loader.EndTransition();

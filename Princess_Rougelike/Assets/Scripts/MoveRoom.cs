@@ -49,6 +49,14 @@ public class MoveRoom : MonoBehaviour
                 tpPlayer(other.transform);
                 doors.SetActive(true);
             }
+
+            if (parent.CompareTag("BossRoom"))
+            {
+                if (manager.level == 1)
+                {
+                    spawn.SpawnBoss(parent.transform);
+                }
+            }
         }
     }
 
