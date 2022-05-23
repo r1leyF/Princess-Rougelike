@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class Slim : MonoBehaviour
 {
     //floats
-    private float coolDown = 1f;
+    private float coolDown = .5f;
 
 
     //gameobject
@@ -37,6 +37,13 @@ public class Slim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        coolDown -= Time.deltaTime;
+        if (coolDown < 0)
+        {
+            Debug.Log("K");
+            Instantiate(floorSlime, transform.position, transform.rotation);
+            coolDown = .5f;
+        }    
         timer += Time.deltaTime;
 
         if (timer >= wanderTimer)

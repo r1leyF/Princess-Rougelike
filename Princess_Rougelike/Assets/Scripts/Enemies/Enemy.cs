@@ -32,6 +32,7 @@ public class Enemy : MonoBehaviour
 
     AudioSource enemyAudio;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +50,7 @@ public class Enemy : MonoBehaviour
     {
         if (dead)
         {
+
             Destroy(gameObject);
         }
         if (dead)
@@ -88,7 +90,7 @@ public class Enemy : MonoBehaviour
         {
             enemyAudio.PlayOneShot(ghostHurt, 0.3f);
         }
-        if (CompareTag("Goblin"))
+        if (CompareTag("Goblin") || CompareTag("Boss"))
         {
             enemyAudio.PlayOneShot(goblinHurt, 1);
         }
@@ -103,7 +105,7 @@ public class Enemy : MonoBehaviour
             {
                 enemyAudio.PlayOneShot(ghostDie, 0.3f);
             }
-            if (CompareTag("Goblin"))
+            if (CompareTag("Goblin") || CompareTag("Boss"))
             {
                 enemyAudio.PlayOneShot(goblinDie, 1);
             }
@@ -112,7 +114,18 @@ public class Enemy : MonoBehaviour
             {
                 manager.enemyCount--;
             }
-            dead = true;
+            StartCoroutine(die());
+        }
+    }
+    IEnumerator die()
+    {
+        Debug.Log("k");
+        yield return new WaitForSeconds(.1f);
+        Debug.Log("Dead");
+        dead = true;
+        if(CompareTag("Boss"))
+        {
+            manager.gameWin();
         }
     }
 }

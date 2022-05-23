@@ -13,6 +13,8 @@ TagManager:
   - Ghost
   - Goblin
   - EnemyRoom
+  - BossRoom
+  - Boss
   layers:
   - Default
   - TransparentFX

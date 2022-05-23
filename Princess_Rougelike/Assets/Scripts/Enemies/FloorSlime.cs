@@ -5,7 +5,7 @@ using UnityEngine;
 public class FloorSlime : MonoBehaviour
 {
     //floats
-    private float heatlh = 5;
+    private float heatlh = 2;
 
     //scpits
     public Player playerScipt;
@@ -30,12 +30,12 @@ public class FloorSlime : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision otherObj)
+    void OnTriggerEnter(Collider otherObj)
     {
         if (otherObj.gameObject.tag == "Player")
         {
-            playerScipt.damage(1);
-
+            playerScipt.damage(.5f);
+            Destroy(gameObject);
         }
     }
 }
