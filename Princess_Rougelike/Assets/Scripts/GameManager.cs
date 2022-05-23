@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
     public GameObject[] allItems;
     public GameObject gameOverScreen;
     public GameObject gameWinScreen;
+    public GameObject bossTitle;
+    public GameObject bossHealth;
+    Slider slider;
     public bool gameRunning = true;
     public int enemyCount;
     public int level;
@@ -19,8 +22,11 @@ public class GameManager : MonoBehaviour
     {
         gameOverScreen.SetActive(false);
         gameWinScreen.SetActive(false);
+        bossTitle.SetActive(false);
+        bossHealth.SetActive(false);
         level = 1;
         loader = GameObject.Find("LevelLoad").GetComponent<LevelLoader>();
+        slider = bossHealth.GetComponent<Slider>();
     }
 
     // Update is called once per frame
@@ -38,6 +44,26 @@ public class GameManager : MonoBehaviour
     {
         gameRunning = false;
         gameWinScreen.SetActive(true);
+    }
+    IEnumerator BossEntrance()
+    {
+        gameRunning = false;
+        bossTitle.SetActive(true);
+        bossHealth.SetActive(true);
+        yield return new WaitForSeconds(2.5f);
+        gameRunning = true;
+    }
+    public void EnterBoss()
+    {
+        StartCoroutine(BossEntrance());
+    }
+    public void SetHealthBar(int amount)
+    {
+        slider.value = amount;
+    }
+    public void SetUpHealth(int max)
+    {
+        slider.maxValue = max;
     }
     public void restart()
     {

@@ -50,5 +50,6 @@ public class SpawnManager : MonoBehaviour
     public void SpawnBoss(Transform spawnPoint)
     {
         Instantiate(boss, spawnPoint.position, transform.rotation);
+        manager.EnterBoss();
     }
 }
