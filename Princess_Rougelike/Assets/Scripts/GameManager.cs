@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] allWeapons;
     public GameObject[] allItems;
     public GameObject gameOverScreen;
+    public GameObject gameWinScreen;
     public bool gameRunning = true;
     public int enemyCount;
     public int level;
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         gameOverScreen.SetActive(false);
+        gameWinScreen.SetActive(false);
         level = 1;
         loader = GameObject.Find("LevelLoad").GetComponent<LevelLoader>();
     }
@@ -31,6 +33,11 @@ public class GameManager : MonoBehaviour
     {
         gameRunning = false;
         gameOverScreen.SetActive(true);
+    }
+    public void gameWin()
+    {
+        gameRunning = false;
+        gameWinScreen.SetActive(true);
     }
     public void restart()
     {
