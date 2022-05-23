@@ -10,12 +10,44 @@ public class MoveRoom : MonoBehaviour
     GameManager manager;
     public GameObject parent;
     public GameObject doors;
+
+    public Material lvl1Floor;
+    public Material lvl2Floor;
+    public Material lvl3Floor;
+    public Material lvl1Wall;
+    public Material lvl2Wall;
+    public Material lvl3Wall;
+
+    MeshRenderer floorMesh;
+    MeshRenderer wallMesh;
     // Start is called before the first frame update
     void Start()
     {
         cam = (Camera)FindObjectOfType(typeof(Camera));
         spawn = GameObject.Find("SpawnManger").GetComponent<SpawnManager>();
         manager = GameObject.Find("GameManager").GetComponent<GameManager>();
+
+        floorMesh = parent.transform.GetChild(1).GetComponent<MeshRenderer>();
+        wallMesh = parent.transform.GetChild(2).GetComponent<MeshRenderer>();
+
+        //level 1 layer
+        if (gameObject.layer == 6)
+        {
+            floorMesh.material = lvl1Floor;
+            wallMesh.material = lvl1Wall;
+        }
+        //level 2 layer
+        else if(gameObject.layer == 7)
+        {
+            floorMesh.material = lvl2Floor;
+            wallMesh.material = lvl2Wall;
+        }
+        //level 3 layer
+        else if(gameObject.layer == 8)
+        {
+            floorMesh.material = lvl3Floor;
+            wallMesh.material = lvl3Wall;
+        }
     }
 
     // Update is called once per frame

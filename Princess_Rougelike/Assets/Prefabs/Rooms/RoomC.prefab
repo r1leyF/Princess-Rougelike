@@ -183,7 +183,12 @@ MonoBehaviour:
   camPoint: {fileID: 5115005079428948865}
   parent: {fileID: 3194817234403552014}
   doors: {fileID: 3826380888657807977}
-  torches: {fileID: 6398804690129950036}
+  lvl1Floor: {fileID: 2100000, guid: 0aaaa8c73061fb2429633a24f6395492, type: 2}
+  lvl2Floor: {fileID: 2100000, guid: e1a1d1ce236935245b7fcf4e68551d71, type: 2}
+  lvl3Floor: {fileID: 2100000, guid: 4c0842f949b489741ad396029b97606a, type: 2}
+  lvl1Wall: {fileID: 2100000, guid: 201a8b481ed720540ace00d8cf1dc37d, type: 2}
+  lvl2Wall: {fileID: 2100000, guid: 52b2893e6bd08f341afdbdd80b5688e5, type: 2}
+  lvl3Wall: {fileID: 2100000, guid: edda0f0b672c420408230997077daef2, type: 2}
 --- !u!65 &1877600808663763258
 BoxCollider:
   m_ObjectHideFlags: 0

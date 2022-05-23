@@ -11,7 +11,11 @@ public class TrapDoor : MonoBehaviour
 
     GameManager manager;
     LevelLoader loader;
+<<<<<<< Updated upstream
     SpawnManager spawnManager;
+=======
+    public bool lastTrapDoor;
+>>>>>>> Stashed changes
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +40,7 @@ public class TrapDoor : MonoBehaviour
 
         manager.level++;
 
+<<<<<<< Updated upstream
         loader.StartTransition();
         yield return new WaitForSeconds(2);
         player.position = spawnPoint.position;
@@ -46,6 +51,22 @@ public class TrapDoor : MonoBehaviour
         manager.gameRunning = true;
         loader.EndTransition();
         Debug.Log("This is level 2");
+=======
+        if (!lastTrapDoor)
+        {
+            loader.StartTransition();
+            yield return new WaitForSeconds(2);
+            player.position = spawnPoint.position;
+            yield return new WaitForSeconds(0.5f);
+            manager.gameRunning = true;
+            loader.EndTransition();
+        }
+        else
+        {
+            loader.LoadLevel(2);
+        }
+        
+>>>>>>> Stashed changes
     }
 
     private void OnTriggerEnter(Collider other)
