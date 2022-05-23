@@ -57,13 +57,14 @@ public class GameManager : MonoBehaviour
     {
         StartCoroutine(BossEntrance());
     }
-    public void SetHealthBar(int amount)
+    public void SetHealthBar(float amount)
     {
         slider.value = amount;
     }
-    public void SetUpHealth(int max)
+    public void SetUpHealth(float max)
     {
         slider.maxValue = max;
+        slider.value = max;
     }
     public void restart()
     {

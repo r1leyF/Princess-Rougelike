@@ -31,6 +31,8 @@ public class Enemy : MonoBehaviour
     public AudioClip ghostDie;
     public AudioClip goblinHurt;
     public AudioClip goblinDie;
+    public AudioClip bossHurt;
+    public AudioClip bossDie;
 
     AudioSource enemyAudio;
 
@@ -43,33 +45,24 @@ public class Enemy : MonoBehaviour
         playerScipt = GameObject.Find("Player").GetComponent<Player>();
         manager = GameObject.Find("GameManager").GetComponent<GameManager>();
         enemyAudio = GetComponent<AudioSource>();
-        
-        transform.position = new Vector3(transform.position.x + Random.Range(-15f, 15f), 0.0f, transform.position.z + Random.Range(-9f, 9f));
+
+        if (!CompareTag("Boss"))
+        {
+            transform.position = new Vector3(transform.position.x + Random.Range(-15f, 15f), 0.0f, transform.position.z + Random.Range(-9f, 9f));
+        }
+        if (CompareTag("Boss"))
+        {
+            manager.SetUpHealth(heatlh);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (dead)
-        {
-            transform.Translate(Vector3.down * 5 * Time.deltaTime);
-        }
-
     }
 
 
     //enemy hits player
-
-    void Movment()
-    {
-        //rotate bullets twards player
-        playerPosition = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
- 
-
-        //moves bullets
-        
-        //transform.Translate(Vector3.forward * Time.deltaTime * speed);
-    }
 
     public void attack()
     {
@@ -79,6 +72,11 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float dmg)
     {
         heatlh = heatlh - dmg;
+        if (CompareTag("Boss"))
+        {
+            manager.SetHealthBar(heatlh);
+        }
+        //make sound based on tag
         if (CompareTag("Slime"))
         {
             enemyAudio.PlayOneShot(slimeHurt, 1);
@@ -87,9 +85,13 @@ public class Enemy : MonoBehaviour
         {
             enemyAudio.PlayOneShot(ghostHurt, 0.3f);
         }
-        if (CompareTag("Goblin") || CompareTag("Boss"))
+        if (CompareTag("Goblin"))
         {
             enemyAudio.PlayOneShot(goblinHurt, 1);
+        }
+        if (CompareTag("Boss"))
+        {
+            enemyAudio.PlayOneShot(bossHurt, 1);
         }
         Debug.Log(heatlh);
         if (heatlh <= 0)
@@ -102,22 +104,26 @@ public class Enemy : MonoBehaviour
             {
                 enemyAudio.PlayOneShot(ghostDie, 0.3f);
             }
-            if (CompareTag("Goblin") || CompareTag("Boss"))
+            if (CompareTag("Goblin"))
             {
                 enemyAudio.PlayOneShot(goblinDie, 1);
+            }
+            if (CompareTag("Boss"))
+            {
+                enemyAudio.PlayOneShot(bossDie, 1);
             }
             //prevents player from hitting an alreday dead enemy and incrementing the enemy count
             if (!dead)
             {
                 manager.enemyCount--;
             }
+            dead = true;
             StartCoroutine(die());
         }
     }
     IEnumerator die()
     {
-        yield return new WaitForSeconds(.1f);
-        dead = true;
+        yield return new WaitForSeconds(.2f);
         int randInt = Random.Range(1, 100);
         if (randInt > pickUpDropChance)
         {
