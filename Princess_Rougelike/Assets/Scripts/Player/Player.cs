@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     public int maxHealth = 5;
     public float currHealth;
-    public float invincibilityDurationSeconds = .15f;
+    public float invincibilityDurationSeconds = .5f;
     public GameObject currWeapon;
     public Transform attackPoint;
     public LayerMask enemyLayers;

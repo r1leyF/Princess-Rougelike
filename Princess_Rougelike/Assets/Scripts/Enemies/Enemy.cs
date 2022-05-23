@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     public float heatlh;
     public float speed;
     public float damage;
+    public float pickUpDropChance;
 
     //bool
     bool dead = false;
@@ -18,6 +19,7 @@ public class Enemy : MonoBehaviour
 
     //game objectt
     public GameObject player;
+    public GameObject[] pickUps;
 
     //vecotr 3
     private Vector3 playerPosition;
@@ -48,11 +50,6 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (dead)
-        {
-
-            Destroy(gameObject);
-        }
         if (dead)
         {
             transform.Translate(Vector3.down * 5 * Time.deltaTime);
@@ -119,11 +116,15 @@ public class Enemy : MonoBehaviour
     }
     IEnumerator die()
     {
-        Debug.Log("k");
         yield return new WaitForSeconds(.1f);
-        Debug.Log("Dead");
         dead = true;
-        if(CompareTag("Boss"))
+        int randInt = Random.Range(1, 100);
+        if (randInt > pickUpDropChance)
+        {
+            Instantiate(pickUps[0], transform.position, transform.rotation);
+        }
+        Destroy(gameObject);
+        if (CompareTag("Boss"))
         {
             manager.gameWin();
         }

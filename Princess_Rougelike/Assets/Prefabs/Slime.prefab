@@ -66,7 +66,10 @@ MonoBehaviour:
   heatlh: 2
   speed: 3
   damage: 0.5
+  pickUpDropChance: 10
   player: {fileID: 0}
+  pickUps:
+  - {fileID: 6572491953669564793, guid: 036c410747d939f41a73c76a9e675e27, type: 3}
   slimeHurt: {fileID: 8300000, guid: ebbe485e048418640bffd2cb1dd9c2a1, type: 3}
   slimeDie: {fileID: 8300000, guid: 265948ae8e5b4d1489a91a665c11dadc, type: 3}
   ghostHurt: {fileID: 8300000, guid: 4bda45600ec49d44ab97b130b8e8edf0, type: 3}
