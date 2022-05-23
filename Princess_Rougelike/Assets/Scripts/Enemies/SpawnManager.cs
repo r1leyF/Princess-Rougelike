@@ -34,7 +34,7 @@ public class SpawnManager : MonoBehaviour
             int rNum = Random.Range(1, 10);
             if (rNum >= 1 && rNum <= gobP)
             {
-                Instantiate(enemies[3], spawnPoint.position, transform.rotation);
+                Instantiate(enemies[2], spawnPoint.position, transform.rotation);
             }
             else if (rNum > gobP && rNum <= gobP + ghoP)
             {
