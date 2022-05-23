@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2564053943031982263}
   - component: {fileID: 8269168123521631892}
   - component: {fileID: 782168947077147798}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -561,6 +561,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 425df94f52c440a4f99f340783b32225, type: 3}
       propertyPath: m_Name
       value: WallTBL
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 425df94f52c440a4f99f340783b32225, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 425df94f52c440a4f99f340783b32225, type: 3}

@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public GameObject gameWinScreen;
     public GameObject bossTitle;
     public GameObject bossHealth;
+    public Camera mainCam;
     Slider slider;
     public bool gameRunning = true;
     public int enemyCount;
@@ -64,7 +65,6 @@ public class GameManager : MonoBehaviour
     public void SetUpHealth(float max)
     {
         slider.maxValue = max;
-        slider.value = max;
     }
     public void restart()
     {

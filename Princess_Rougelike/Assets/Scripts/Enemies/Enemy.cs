@@ -125,7 +125,7 @@ public class Enemy : MonoBehaviour
     {
         yield return new WaitForSeconds(.2f);
         int randInt = Random.Range(1, 100);
-        if (randInt > pickUpDropChance)
+        if (randInt <= pickUpDropChance)
         {
             Instantiate(pickUps[0], transform.position, transform.rotation);
         }
