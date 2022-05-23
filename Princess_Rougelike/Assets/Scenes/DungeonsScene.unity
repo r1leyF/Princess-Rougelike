@@ -348,6 +348,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RoomR
       objectReference: {fileID: 0}
+    - target: {fileID: 4313545650130264102, guid: fa28d12ff53d38743b4168856af297ba, type: 3}
+      propertyPath: m_TagString
+      value: BossRoom
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa28d12ff53d38743b4168856af297ba, type: 3}
 --- !u!1001 &133538544
@@ -2478,7 +2482,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6750842435617591847, guid: 4f3aafd3e3e45eb4598e30df700aa3de, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -132.40001
+      value: -171.7
       objectReference: {fileID: 0}
     - target: {fileID: 6750842435617591847, guid: 4f3aafd3e3e45eb4598e30df700aa3de, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3723,6 +3727,7 @@ MonoBehaviour:
   - {fileID: 3739049909328905862, guid: 366b1868ba7fe6844ae62a1470cc88f6, type: 3}
   - {fileID: 8127547688289098666, guid: f3684460cf4969f42b77be02dc585498, type: 3}
   - {fileID: 2272528281187291901, guid: 40b5e477b77a4994eb7e3b30ffb69f9f, type: 3}
+  boss: {fileID: 8565173453665670010, guid: f9619d0a562a6e947b9adaa0044bd64f, type: 3}
 --- !u!4 &1378014742
 Transform:
   m_ObjectHideFlags: 0

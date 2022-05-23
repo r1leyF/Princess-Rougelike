@@ -28,6 +28,7 @@ public class Player : MonoBehaviour
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         playerAudio = GetComponent<AudioSource>();
         currHealth = maxHealth;
+        //currHealth = 100;
         HealthBar.instance.SetupHearts(currHealth);
     }
     

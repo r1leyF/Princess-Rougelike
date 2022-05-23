@@ -1,21 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
-public class Goblin : MonoBehaviour
+public class Boss : MonoBehaviour
 {
     //float
     private float startCoolDown = 1.5f;
     private float coolDown;
-    private float jumpDistance = 10;
-    private float speed = 4;
+    private float goblinCoolDown = 5;
+    private float jumpDistance = 15;
+    private float speed = 7;
     private float heatlh = 10;
     private float attackDistance = 12;
 
     //game objectt
     public GameObject player;
-    NavMeshAgent agent;
+    public GameObject goblin;
+
+    UnityEngine.AI.NavMeshAgent agent;
     GameManager manager;
 
     //vecotr 3
@@ -27,7 +29,7 @@ public class Goblin : MonoBehaviour
     {
         //gets player 
         player = GameObject.Find("Player");
-        agent = GetComponent<NavMeshAgent>();
+        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         agent.speed = speed;
         coolDown = startCoolDown;
         manager = GameObject.Find("GameManager").GetComponent<GameManager>();
@@ -38,17 +40,25 @@ public class Goblin : MonoBehaviour
     {
         if (otherObj.gameObject.tag == "Player" && manager.gameRunning)
         {
-            otherObj.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.forward * 5,ForceMode.Impulse);
+            otherObj.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.forward * 5, ForceMode.Impulse);
             GetComponent<Enemy>().attack();
         }
     }
     void Update()
     {
+        goblinCoolDown -= Time.deltaTime;
+        if (goblinCoolDown < 0)
+        {
+            Debug.Log("goblin");
+            Instantiate(goblin, transform.position + transform.forward * 2, Quaternion.identity);
+            goblinCoolDown = 5;
+        }
+
         //Debug.Log(coolDown);
         if (manager.gameRunning)
         {
             transform.LookAt(player.transform.position);
-            float distance = Vector3.Distance(transform.position,player.transform.position);
+            float distance = Vector3.Distance(transform.position, player.transform.position);
             if (distance <= attackDistance)
             {
                 agent.isStopped = true;

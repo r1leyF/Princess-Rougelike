@@ -47,7 +47,7 @@ public class Bone : MonoBehaviour
     {
         if (otherObj.gameObject.tag == "Player")
         {
-            playerScipt.damage(1);
+            playerScipt.damage(0.25f);
             Destroy(gameObject);
         }
         else
