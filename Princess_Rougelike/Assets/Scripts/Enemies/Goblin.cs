@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class Goblin : MonoBehaviour
 {
     //float
-    private float startCoolDown = 1.5f;
+    private float startCoolDown = .9f;
     private float coolDown;
     private float jumpDistance = 32;
     private float speed = 7;
