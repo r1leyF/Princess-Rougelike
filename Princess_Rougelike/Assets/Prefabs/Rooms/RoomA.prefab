@@ -143,7 +143,7 @@ GameObject:
   - component: {fileID: 7201474820460669355}
   - component: {fileID: 7201474820460669353}
   - component: {fileID: 7201474820460669352}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1208,6 +1208,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ec844d9e365601547a7b63801612a378, type: 3}
       propertyPath: m_Name
       value: WallA
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ec844d9e365601547a7b63801612a378, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec844d9e365601547a7b63801612a378, type: 3}

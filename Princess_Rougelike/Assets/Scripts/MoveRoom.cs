@@ -13,9 +13,9 @@ public class MoveRoom : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cam = (Camera)FindObjectOfType(typeof(Camera));
         spawn = GameObject.Find("SpawnManger").GetComponent<SpawnManager>();
         manager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        cam = manager.mainCam;
     }
 
     // Update is called once per frame
