@@ -127,12 +127,12 @@ public class Enemy : MonoBehaviour
         int randInt = Random.Range(1, 100);
         if (randInt > pickUpDropChance)
         {
-            Instantiate(pickUps[0], transform.position, transform.rotation);
+            Instantiate(pickUps[0], new Vector3(transform.position.x, transform.position.y + 0.9462098f, transform.position.z), transform.rotation);
         }
         Destroy(gameObject);
         if (CompareTag("Boss"))
         {
-            manager.gameWin();
+            manager.GameWin();
         }
     }
 }

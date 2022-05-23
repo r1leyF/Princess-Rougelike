@@ -76,8 +76,8 @@ MonoBehaviour:
   ghostDie: {fileID: 8300000, guid: 4bda45600ec49d44ab97b130b8e8edf0, type: 3}
   goblinHurt: {fileID: 8300000, guid: 84f9b28edfea343439a9f734c17db131, type: 3}
   goblinDie: {fileID: 8300000, guid: a80db332b3a573a4cb6c31a4b279fcbd, type: 3}
-  bossHurt: {fileID: 0}
-  bossDie: {fileID: 0}
+  bossHurt: {fileID: 8300000, guid: 353b6b734f83cc74281e95f1a7d22741, type: 3}
+  bossDie: {fileID: 8300000, guid: d524c43cf8977ba468574a477b88f7a3, type: 3}
 --- !u!114 &8020187120778360951
 MonoBehaviour:
   m_ObjectHideFlags: 0

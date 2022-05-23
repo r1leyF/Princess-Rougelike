@@ -11,6 +11,7 @@ public class Chest : MonoBehaviour
     GameManager manager;
 
     public AudioClip open;
+    public AudioClip pickUp;
     AudioSource chestAudio;
     // Start is called before the first frame update
     void Start()
@@ -43,6 +44,7 @@ public class Chest : MonoBehaviour
             //sets weapon using the weapons array
             player.SetWeapon(manager.allWeapons[itemIndex], this);
 
+            chestAudio.PlayOneShot(pickUp, 1);
             //checks if it has been emptied
             if(itemIndex < 0)
             {

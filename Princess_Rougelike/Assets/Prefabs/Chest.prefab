@@ -79,6 +79,7 @@ MonoBehaviour:
   opened: 0
   animator: {fileID: 7426420216485114618}
   open: {fileID: 8300000, guid: 9f813a38b1f210841932ad06acf4436f, type: 3}
+  pickUp: {fileID: 8300000, guid: 2564e36059c197e4c86e52be38a3ef88, type: 3}
 --- !u!82 &7460212373737625874
 AudioSource:
   m_ObjectHideFlags: 0

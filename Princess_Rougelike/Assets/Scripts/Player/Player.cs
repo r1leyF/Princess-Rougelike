@@ -106,7 +106,7 @@ public class Player : MonoBehaviour
         if(currHealth <= 0)
         {
             playerAudio.PlayOneShot(died, 0.2f);
-            gameManager.gameOver();
+            gameManager.GameOver();
         }
         StartCoroutine(BecomeTemporarilyInvincible());
     }

@@ -17,6 +17,14 @@ public class GameManager : MonoBehaviour
     public int enemyCount;
     public int level;
     LevelLoader loader;
+
+    public AudioClip gameOverSound;
+    public AudioClip gameWinSound;
+    public AudioClip heartPickUp;
+    public AudioSource gameAudio;
+
+    public AudioClip bossMusic;
+    public AudioSource gameMusic;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,19 +43,25 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void gameOver()
+    public void GameOver()
     {
         gameRunning = false;
         gameOverScreen.SetActive(true);
+        gameMusic.volume = 0.05f;
+        gameAudio.PlayOneShot(gameOverSound);
     }
-    public void gameWin()
+    public void GameWin()
     {
         gameRunning = false;
+        gameMusic.volume = 0.05f;
+        gameAudio.PlayOneShot(gameWinSound);
         gameWinScreen.SetActive(true);
     }
     IEnumerator BossEntrance()
     {
         gameRunning = false;
+        gameMusic.clip = bossMusic;
+        gameMusic.Play();
         bossTitle.SetActive(true);
         bossHealth.SetActive(true);
         yield return new WaitForSeconds(2.5f);
@@ -69,6 +83,11 @@ public class GameManager : MonoBehaviour
     public void restart()
     {
         loader.LoadLevel(0);
+    }
+
+    public void PlayPickUpSound()
+    {
+        gameAudio.PlayOneShot(heartPickUp,0.2f);
     }
 
 }
