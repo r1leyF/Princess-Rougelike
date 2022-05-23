@@ -183,7 +183,6 @@ MonoBehaviour:
   camPoint: {fileID: 5115005079428948865}
   parent: {fileID: 3194817234403552014}
   doors: {fileID: 3826380888657807977}
-  torches: {fileID: 6398804690129950036}
 --- !u!65 &1877600808663763258
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -424,20 +423,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5464c70fab0f9da44a4e845c96e05964, type: 3}
   m_PrefabInstance: {fileID: 5973383285831906446}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &1197766841823423997
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6783777436187822559}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 8733429697405204941, guid: 5464c70fab0f9da44a4e845c96e05964, type: 3}
 --- !u!64 &8492685479760338532
 MeshCollider:
   m_ObjectHideFlags: 0
