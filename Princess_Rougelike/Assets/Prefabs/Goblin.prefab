@@ -85,6 +85,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42664957611bc744092de0aaa6befd43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpDistance: 25
+  speed: 4
+  heatlh: 10
   player: {fileID: 0}
 --- !u!82 &176814005
 AudioSource:

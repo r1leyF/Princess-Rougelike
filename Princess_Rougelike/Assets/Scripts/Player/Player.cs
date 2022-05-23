@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     public int maxHealth = 5;
     public float currHealth;
+    public float invincibilityDurationSeconds = .15f;
     public GameObject currWeapon;
     public Transform attackPoint;
     public LayerMask enemyLayers;
@@ -13,7 +14,7 @@ public class Player : MonoBehaviour
     GameManager gameManager;
     Enemy monster;
     Enemy enemin;
-
+    private bool isInvincible;
     public AudioClip swoosh;
     public AudioClip hurt;
     public AudioClip died;
@@ -30,6 +31,7 @@ public class Player : MonoBehaviour
         currHealth = maxHealth;
         //currHealth = 100;
         HealthBar.instance.SetupHearts(currHealth);
+        isInvincible = false;
     }
     
     // Update is called once per frame
@@ -89,14 +91,15 @@ public class Player : MonoBehaviour
         {
             //damage enemy && do knock back
             Debug.Log("we hit " + enemy.name);
-            hitenemy = enemy.name;
-            enemin = GameObject.Find(hitenemy).GetComponent<Enemy>();
+            enemin = enemy.GetComponent<Enemy>();
             enemin.TakeDamage(wpnInfo.damage);
         }
     }
 
     public void damage(float dmg)
     {
+        //doesn't do anything if the player is invincible
+        if (isInvincible) return;
         playerAudio.PlayOneShot(hurt, 0.2f);
         currHealth -= dmg;
         HealthBar.instance.RemoveHearts(dmg);
@@ -105,8 +108,15 @@ public class Player : MonoBehaviour
             playerAudio.PlayOneShot(died, 0.2f);
             gameManager.gameOver();
         }
+        StartCoroutine(BecomeTemporarilyInvincible());
     }
+    private IEnumerator BecomeTemporarilyInvincible()
+    {
 
+        isInvincible = true;
+        yield return new WaitForSeconds(invincibilityDurationSeconds);
+        isInvincible = false;
+    }
     //draws a sphere around the attack range for easy editing
     private void OnDrawGizmosSelected()
     {
