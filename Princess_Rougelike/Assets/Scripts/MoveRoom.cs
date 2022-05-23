@@ -53,6 +53,7 @@ public class MoveRoom : MonoBehaviour
             else if( parent.CompareTag("BossRoom"))
             {
                 spawn.SpawnBoss(parent.transform);
+
                 parent.gameObject.tag = "Untagged";
                 tpPlayer(other.transform);
                 doors.SetActive(true);
