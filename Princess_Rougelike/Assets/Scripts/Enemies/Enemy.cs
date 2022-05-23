@@ -32,6 +32,7 @@ public class Enemy : MonoBehaviour
 
     AudioSource enemyAudio;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -122,5 +123,9 @@ public class Enemy : MonoBehaviour
         yield return new WaitForSeconds(.1f);
         Debug.Log("Dead");
         dead = true;
+        if(CompareTag("Boss"))
+        {
+            manager.gameWin();
+        }
     }
 }
