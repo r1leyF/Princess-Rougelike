@@ -76,7 +76,7 @@ public class MoveRoom : MonoBehaviour
         else if (player.position.z < transform.position.z && player.position.x < transform.position.x + 3 && player.position.x > transform.position.x - 3)
         {
             Debug.Log("bottom");
-            player.Translate(new Vector3(0, 0,  - 2.7f));
+            player.Translate(new Vector3(0, 0,  + 2.7f));
         }
     }
 }
