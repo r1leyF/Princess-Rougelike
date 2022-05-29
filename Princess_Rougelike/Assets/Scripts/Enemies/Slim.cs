@@ -40,9 +40,8 @@ public class Slim : MonoBehaviour
         coolDown -= Time.deltaTime;
         if (coolDown < 0)
         {
-            Debug.Log("K");
             Instantiate(floorSlime, transform.position, transform.rotation);
-            coolDown = .5f;
+            coolDown = .3f;
         }    
         timer += Time.deltaTime;
 

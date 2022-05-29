@@ -63,7 +63,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1102b7a0e78a22c42acf5b8029826791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heatlh: 30
+  heatlh: 60
   speed: 2
   damage: 0.5
   pickUpDropChance: 100

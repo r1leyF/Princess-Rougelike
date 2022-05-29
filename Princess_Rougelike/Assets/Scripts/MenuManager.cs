@@ -75,5 +75,8 @@ public class MenuManager : MonoBehaviour
         controlsScreen.SetActive(false);
         titleScreen.SetActive(true);
     }
-
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }

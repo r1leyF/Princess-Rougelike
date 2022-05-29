@@ -63,8 +63,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1102b7a0e78a22c42acf5b8029826791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heatlh: 2
-  speed: 2
+  heatlh: 6
+  speed: 2.5
   damage: 0.25
   pickUpDropChance: 30
   player: {fileID: 0}
@@ -76,6 +76,8 @@ MonoBehaviour:
   ghostDie: {fileID: 8300000, guid: 4bda45600ec49d44ab97b130b8e8edf0, type: 3}
   goblinHurt: {fileID: 8300000, guid: 84f9b28edfea343439a9f734c17db131, type: 3}
   goblinDie: {fileID: 8300000, guid: a80db332b3a573a4cb6c31a4b279fcbd, type: 3}
+  bossHurt: {fileID: 0}
+  bossDie: {fileID: 0}
 --- !u!114 &3739049909328905861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,7 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42664957611bc744092de0aaa6befd43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpDistance: 25
+  jumpDistance: 15
   speed: 4
   heatlh: 10
   player: {fileID: 0}

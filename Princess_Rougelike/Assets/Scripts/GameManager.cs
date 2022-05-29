@@ -79,6 +79,7 @@ public class GameManager : MonoBehaviour
     public void SetUpHealth(float max)
     {
         slider.maxValue = max;
+        slider.value = max;
     }
     public void restart()
     {

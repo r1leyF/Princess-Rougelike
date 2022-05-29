@@ -34,15 +34,15 @@ public class SpawnManager : MonoBehaviour
             int rNum = Random.Range(1, 10);
             if (rNum >= 1 && rNum <= gobP)
             {
-                Instantiate(enemies[2], spawnPoint.position, transform.rotation);
+                Instantiate(enemies[2], new Vector3(spawnPoint.position.x, spawnPoint.position.y + 0.82f, spawnPoint.position.z), transform.rotation);
             }
             else if (rNum > gobP && rNum <= gobP + ghoP)
             {
-                Instantiate(enemies[1], spawnPoint.position, transform.rotation);
+                Instantiate(enemies[1], new Vector3(spawnPoint.position.x, spawnPoint.position.y + 0.82f, spawnPoint.position.z), transform.rotation);
             }
             else if (rNum > ghoP && rNum <= ghoP + sliP)
             {
-                Instantiate(enemies[0], spawnPoint.position, transform.rotation);
+                Instantiate(enemies[0], new Vector3(spawnPoint.position.x, spawnPoint.position.y + 0.82f, spawnPoint.position.z), transform.rotation);
             }
         }
         manager.enemyCount = eNum;

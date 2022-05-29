@@ -9,6 +9,8 @@ public class TrapDoor : MonoBehaviour
     public Transform spawnPoint;
     GameManager manager;
     LevelLoader loader;
+    public AudioSource doorAudio;
+    public AudioClip open;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,8 +26,6 @@ public class TrapDoor : MonoBehaviour
 
     IEnumerator Open(Transform player)
     {
-        animator.SetTrigger("Open");
-
         manager.gameRunning = false;
 
         yield return new WaitForSeconds(1);
@@ -45,6 +45,8 @@ public class TrapDoor : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            animator.SetTrigger("Open");
+            doorAudio.PlayOneShot(open, 2);
             StartCoroutine(Open(other.transform));
         }
     }
